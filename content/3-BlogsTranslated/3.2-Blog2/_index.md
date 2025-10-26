@@ -25,23 +25,23 @@ Getting started with LocalStack in VS Code is straightforward. Developers can be
 
 First, I’ll update my copy of the AWS Toolkit for VS Code to the latest version. Once, I’ve done this, I can see a new option when I go to **Application Builder** and click on **Walkthrough of Application Builder**. This allows me to install LocalStack with a single click.
 
-![anh](/images/image-01.png)
+![anh](/static/images/image-01.png)
 
 Once I’ve completed the setup for LocalStack, I can start it up from the status bar and then I’ll be able to select LocalStack from the list of my [configured AWS profiles](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-configure.html). In this illustration, I am using Application Composer to build a simple serverless architecture using [Amazon API Gateway](https://aws.amazon.com/api-gateway/), Lambda, and DynamoDB. Normally, I’d deploy this to AWS using AWS SAM. In this case, I’m going to use the same AWS SAM command to deploy my stack locally.
 
-![anh](/images/image-02.png)
+![anh](/static/images/image-02.png)
 
 I just do `sam deploy –guided –profile localstack` from the command line and follow the usual prompts. Deploying to LocalStack using AWS SAM CLI provides the exact same experience I’m used to when deploying to AWS. In the screenshot below, I can see the standard output from AWS SAM, as well as my new LocalStack resources listed in the AWS Toolkit Explorer.
 
-![anh](/images/image-03.png)
+![anh](/static/images/image-03.png)
 
 I can even go in to a Lambda function and edit the function code I’ve deployed locally!
 
-![anh](/images/image-04.png)
+![anh](/static/images/image-04.png)
 
 Over on the LocalStack website, I can login and take a look at all the resources I have running locally. In the screenshot below, you can see the local DynamoDB table I just deployed.
 
-![anh](/images/image-05.png)
+![anh](/static/images/image-05.png)
 
 ## Enhanced development workflow
 

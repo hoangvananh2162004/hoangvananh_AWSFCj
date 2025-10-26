@@ -19,7 +19,7 @@ Trong bài viết này, chúng tôi sẽ trình bày cách triển khai AWS Back
 
 AWS Control Tower hiện cung cấp built-in capabilities để tối ưu hóa việc backup management ở quy mô lớn thông qua tích hợp trực tiếp với AWS Backup. Tính năng này sẽ tự động tạo một central backup vault trong mỗi AWS Region bên trong một central backup account chuyên dụng. Khi tổ chức của bạn mở rộng ra nhiều accounts và regions, AWS Control Tower sẽ tự động tạo các local backup vaults trong từng workload account thuộc các organizational units (OUs) đã được AWS Backup-enabled trên tất cả các governed AWS Regions. Bạn có thể tùy chỉnh chiến lược backup của mình bằng cách cấu hình backup policies để sao chép dữ liệu từ local vaults sang central vaults, có thể trong cùng một Region hoặc cross-Region. Ngoài ra, bạn không cần đến các custom deployment pipelines hoặc complex automation. Bạn có thể sử dụng AWS Backup policies để triển khai một chiến lược backup toàn diện, đáp ứng các yêu cầu cụ thể của tổ chức trong khi vẫn duy trì tính governance nhất quán trên toàn bộ môi trường AWS.
 
-![anh](/images)
+![anh](/static/images)
 
 ## Điều kiện tiên quyết
 
@@ -57,11 +57,11 @@ Bây giờ bạn có thể tích hợp AWS Backup với AWS Control Tower landin
 
 Bạn có thể chọn các accounts đã tạo ở Bước 1 và AWS KMS key ở Bước 2 từ drop-down list trong mỗi text box, như minh họa trong hình dưới đây.
 
-![anh](/images)
+![anh](/static/images)
 
 Quá trình landing zone update có thể mất từ 30–45 phút để hoàn tất. Khi hoàn thành, bạn sẽ thấy trạng thái AWS Backup là **Enabled**, và các accounts cùng AWS KMS keys mà bạn chỉ định sẽ xuất hiện trong AWS Control Tower console, như minh họa trong hình dưới đây.
 
-![anh](/images)
+![anh](/static/images)
 
 ### Bước 4: Cấu hình service opt-in và enable delegated administrator
 
@@ -72,11 +72,11 @@ Sau khi enable AWS Backup trong AWS Control Tower, cấu hình service opt-in tr
 - Điều này phải được thực hiện thủ công trong AWS Backup console.
 - Backup service opt-in là một cài đặt theo AWS Region, và bạn phải lặp lại quy trình này cho tất cả các AWS Control Tower governed AWS Regions.
 
-![anh](/images)
+![anh](/static/images)
 
 Cuối cùng, đặt backup administrator account làm delegated administrator để kích hoạt việc organization-wide backup task monitoring và quản lý backup policies từ tài khoản này, như minh họa trong hình dưới đây.
 
-![anh](/images)
+![anh](/static/images)
 
 ### Bước 5: Enable AWS Backup baseline trên các OUs cụ thể
 
@@ -86,7 +86,7 @@ Sau khi cấu hình xong hạ tầng core backup trước đó, bạn cần enab
 
 Thứ tự enablement là rất quan trọng, vì vậy khi enable AWS Backup baseline trên toàn tổ chức, hãy tuân theo cách tiếp cận theo hierarchy. Bắt đầu với các top-level OUs trước khi tiếp tục với các child OUs. Trong ví dụ minh họa trong hình dưới đây, bạn sẽ enable AWS Backup baseline trước trên Workloads top-level OU, sau đó tiếp tục với các child OUs như Workloads X, Workloads Y, v.v.
 
-![anh](/images)
+![anh](/static/images)
 
 ### Bước 6: Gắn tag cho các resources để backup
 
@@ -121,7 +121,7 @@ Bây giờ bạn đã sẵn sàng để gỡ tích hợp AWS Backup khỏi AWS C
 
 **AWS Control Tower** sẽ gỡ tích hợp trong khi vẫn giữ nguyên backup data hiện có của bạn, như minh họa trong hình dưới đây.
 
-![anh](/images)
+![anh](/static/images)
 
 ### Bước 3: Dọn dẹp các resources bổ sung
 

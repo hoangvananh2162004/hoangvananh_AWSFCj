@@ -1,7 +1,8 @@
-baseURL = 'https://github.com/hoangvananh2162004/hoangvananh2162004.github.io.git'
+baseURL = 'https://github.com/hoangvananh2162004/hoangvananh_AWS.git'
 relativeURLs = true
 canonifyURLs = true
 theme = 'hugo-theme-learn'
+publishDir = "public"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]

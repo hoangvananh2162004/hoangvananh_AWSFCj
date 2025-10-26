@@ -1,0 +1,46 @@
+baseURL = 'https://github.com/hoangvananh2162004/hoangvananh2162004.github.io.git'
+relativeURLs = true
+canonifyURLs = true
+theme = 'hugo-theme-learn'
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
+[params]
+  # Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "workshop"
+  # Git hub repo link
+  editURL = ""
+  description = ""
+  author = "hoangvananh2162004@gmail.com"
+  showVisitedLinks = true
+  disableBreadcrumb = false
+  disableNextPrev = false
+  alwaysopen = true
+
+[Languages]
+[Languages.en]
+title = "Report"
+weight = 1
+languageName = "English"
+
+[[Languages.en.menu.shortcuts]]
+name = "<i class='fab fa-facebook'></i> AWS Study Group"
+identifier = "AWS Study Group FB"
+url = "https://www.facebook.com/groups/awsstudygroupfcj/"
+weight = 20
+
+[Languages.vi]
+title = "Báo Cáo"
+weight = 2
+languageName = "Tiếng Việt"
+
+[[Languages.vi.menu.shortcuts]]
+name = "<i class='fab fa-facebook'></i> AWS Study Group"
+identifier = "AWS Study Group FB"
+url = "https://www.facebook.com/groups/awsstudygroupfcj/"
+weight = 20
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

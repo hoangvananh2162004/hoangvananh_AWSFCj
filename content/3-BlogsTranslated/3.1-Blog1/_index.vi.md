@@ -15,7 +15,7 @@ Chiến lược [blue/green deployment](https://docs.aws.amazon.com/whitepapers/
 
 Khi một Amazon ECS [service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html) được tạo hoặc cập nhật, chúng tôi sẽ tạo ra một immutable object chứa chính xác specification của nó, được gọi là một Amazon ECS [service revision](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-revision.html). Sau đó, control plane sẽ cố gắng deploy service revision này thông qua một Amazon ECS [service deployment](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html). Một deployment sẽ trải qua [multiple lifecycle states](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html#service-deployments-states), chẳng hạn như `IN_PROGRESS` và `SUCCESSFUL`. Trong lần phát hành blue/green gần đây, có một subcategory mới nằm bên dưới các states này, được gọi là lifecycle stages. Khi một deployment bắt đầu, chúng tôi sẽ xử lý tuần tự qua từng lifecycle stage, với tùy chọn mở rộng deployment bằng custom logic được đóng gói trong lifecycle hooks. Hình minh họa sau đây cho thấy mối quan hệ giữa lifecycle states, lifecycle stages, và lifecycle hooks.
 
-![anh](/images/C45-1.png)
+![anh](/static/images/C45-1.png)
 
 Lifecycle hooks là các synchronous [AWS Lambda](https://aws.amazon.com/lambda/) functions mà Amazon ECS control plane sẽ invoke thay cho bạn. Bạn có thể viết bất kỳ logic nào bạn muốn trong các function này bằng bất kỳ runtime language nào bạn chọn. Khi function đã thực thi xong logic của nó, nó phải return một `hookStatus` để Amazon ECS deployment có thể tiếp tục. Nếu `hookStatus` không được return, hoặc nếu function bị lỗi, thì Amazon ECS deployment sẽ rollback.
 
@@ -25,7 +25,7 @@ Các giá trị của hookStatus có thể là:
 - `FAILED`: deployment sẽ rollback về deployment cuối cùng đã thành công.
 - `IN_PROGRESS`: Amazon ECS control plane sẽ invoke lại function sau một khoảng thời gian ngắn. Mặc định là 30 giây, nhưng có thể điều chỉnh bằng cách return một `callBackDelay`.
 
-![anh](/images/C45-2.png)
+![anh](/static/images/C45-2.png)
 
 #### IN_PROGRESS hook status
 
@@ -166,11 +166,11 @@ create-service \
 
 3. Trong Amazon ECS [console](https://us-west-2.console.aws.amazon.com/ecs/home), bạn có thể theo dõi deployment này. **Current Deployment stage** trong **Deployment Tab** cho chúng ta biết deployment đang ở lifecycle stage nào. Hãy nhớ rằng lifecycle hook đầu tiên của chúng ta chạy ở `PRE_SCALE_UP` stage.
 
-![anh](/images/C45-3.png)
+![anh](/static/images/C45-3.png)
 
 4. Bạn có thể xác minh rằng **lifecycle hook** đã thực thi thành công bằng cách truy cập [Amazon CloudWatch Logs console](https://aws.amazon.com/cloudwatch/) và chọn **Log Group** có tên bắt đầu bằng `/aws/lambda/EcsBlugreenHookStack-admissionFunction`.
 
-![anh](/images/C45-4.png)
+![anh](/static/images/C45-4.png)
 
 Thành công! Container images được sử dụng trong task definition của chúng ta đã được xác minh theo policy trước khi task được scheduled.
 
@@ -233,11 +233,11 @@ update-service \
 
 3. Bạn có thể theo dõi deployment đang diễn ra trong Amazon [ECS console](https://us-west-2.console.aws.amazon.com/ecs/home), quan sát service di chuyển qua các lifecycle stages khác nhau. Khi deployment đạt đến `POST_TEST_TRAFFIC_SHIFT` stage, chúng ta có thể kiểm tra tiến trình của hook.
 
-![anh](/images/C45-5.png)
+![anh](/static/images/C45-5.png)
 
 4. CloudWatch Logs console cung cấp cho chúng ta cái nhìn về những gì đang diễn ra ở stage này. Trong một log group có tên bắt đầu bằng `/aws/lambda/EcsBlugreenHookStack-approvalFunction`, chúng ta sẽ thấy các invocation của function mỗi 30 giây, cố gắng truy xuất file từ Amazon S3.
 
-![anh](/images/C45-6.png)
+![anh](/static/images/C45-6.png)
 
 5. Để cho phép deployment pipeline tiếp tục, chúng ta tải một file lên S3 bucket. Trước tiên, chúng ta cần lấy Amazon ECS service revision ARN, rút gọn chỉ còn service revision ID, và sử dụng nó làm tên file.
 
@@ -261,7 +261,7 @@ aws s3 cp $SERVICE_REVISION_ID.txt s3://$S3_BUCKET_NAME/$SERVICE_REVISION_ID.txt
 
 6. Bây giờ khi file đã tồn tại trong Amazon S3, chúng ta có thể quay lại Amazon ECS console và quan sát deployment hoàn tất.
 
-![anh](/images/C45-7.png)
+![anh](/static/images/C45-7.png)
 
 ## Dọn dẹp
 

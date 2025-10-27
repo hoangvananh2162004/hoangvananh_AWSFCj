@@ -7,9 +7,7 @@ publishDir = "public"
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
 [params]
-  # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
-  # Git hub repo link
   editURL = ""
   description = ""
   author = "hoangvananh2162004@gmail.com"
@@ -18,28 +16,26 @@ home = [ "HTML", "RSS", "JSON"]
   disableNextPrev = false
   alwaysopen = true
 
-[Languages]
-[Languages.en]
-title = "Report"
-weight = 1
-languageName = "English"
+[languages]
+  [languages.en]
+    title = "Report"
+    weight = 1
+    languageName = "English"
+    [[languages.en.menu.shortcuts]]
+      name = "<i class='fab fa-facebook'></i> AWS Study Group"
+      identifier = "AWS Study Group FB"
+      url = "https://www.facebook.com/groups/awsstudygroupfcj/"
+      weight = 20
 
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-facebook'></i> AWS Study Group"
-identifier = "AWS Study Group FB"
-url = "https://www.facebook.com/groups/awsstudygroupfcj/"
-weight = 20
-
-[Languages.vi]
-title = "Báo Cáo"
-weight = 2
-languageName = "Tiếng Việt"
-
-[[Languages.vi.menu.shortcuts]]
-name = "<i class='fab fa-facebook'></i> AWS Study Group"
-identifier = "AWS Study Group FB"
-url = "https://www.facebook.com/groups/awsstudygroupfcj/"
-weight = 20
+  [languages.vi]
+    title = "Báo Cáo"
+    weight = 2
+    languageName = "Tiếng Việt"
+    [[languages.vi.menu.shortcuts]]
+      name = "<i class='fab fa-facebook'></i> AWS Study Group"
+      identifier = "AWS Study Group FB"
+      url = "https://www.facebook.com/groups/awsstudygroupfcj/"
+      weight = 20
 
 [markup]
   [markup.goldmark]

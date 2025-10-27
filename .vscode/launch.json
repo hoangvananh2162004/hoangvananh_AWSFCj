@@ -14,7 +14,7 @@
         "-ExecutionPolicy",
         "Bypass",
         "-Command",
-        "Start-Process 'http://localhost:1313/hoangvananh2162004/hoangvananh_AWSFCj.git/'; hugo server -D"
+        "Start-Process 'http://localhost:1313/hoangvananh_AWSFCj/'; hugo server -D"
       ],
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",

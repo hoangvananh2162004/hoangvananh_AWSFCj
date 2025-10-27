@@ -1,31 +1,48 @@
-name: Deploy Hugo site to GitHub Pages - TheKhiem7 Version
+name: Deploy Hugo to GitHub Pages
 
 on:
   push:
-    branches:
-      - main # Mỗi lần bạn push lên main, site sẽ tự build & deploy
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: false
+          fetch-depth: 0
+          submodules: false   # theme local -> không cần submodule
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
-          extended: true
+          hugo-version: 'latest'
+          extended: true      # Learn/SCSS -> extended
 
-      - name: Build Hugo site
+      - name: Build
         run: hugo --minify
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

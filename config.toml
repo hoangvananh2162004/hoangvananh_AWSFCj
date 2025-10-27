@@ -1,5 +1,5 @@
-baseURL = 'https://github.com/hoangvananh2162004/hoangvananh_AWSFCj.git'
-relativeURLs = true
+baseURL = 'https://hoangvananh2162004.github.io/hoangvananh_AWSFCj/'
+relativeURLs = false
 canonifyURLs = true
 theme = 'hugo-theme-learn'
 publishDir = "public"

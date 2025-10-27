@@ -1,4 +1,4 @@
-name: Deploy Hugo site to GitHub Pages
+name: Deploy Hugo site to GitHub Pages - TheKhiem7 Version
 
 on:
   push:
@@ -12,11 +12,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          submodules: false
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "latest"
+          extended: true
 
       - name: Build Hugo site
         run: hugo --minify

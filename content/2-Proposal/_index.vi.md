@@ -11,99 +11,96 @@ pre: " <b> 2. </b> "
 
 ### 1. Tóm tắt điều hành
 
-Dự án này nhằm mục tiêu thiết kế và triển khai một **Batch-based Clickstream Analytics Platform** cho một trang web thương mại điện tử chuyên về máy tính và phụ kiện, sử dụng AWS Cloud Services. Hệ thống thu thập dữ liệu tương tác của người dùng (như clicks, searches, và page visits) từ website và lưu trữ chúng trong **Amazon S3** dưới dạng raw logs. Cứ mỗi giờ, **Amazon EventBridge** sẽ kích hoạt **AWS Lambda** functions để xử lý và chuyển đổi dữ liệu trước khi tải chúng vào **data warehouse** được triển khai trên **Amazon EC2**.
+Dự án này nhằm **thiết kế và triển khai Batch-based Clickstream Analytics Platform** cho một website thương mại điện tử chuyên về **máy tính và phụ kiện** (giao diện frontend của website được tích hợp một **JavaScript SDK** nhẹ để gửi dữ liệu hoạt động của người dùng như **clicks**, **views**, **searches** tới **backend API**) bằng cách sử dụng **AWS Cloud Services**.
+Hệ thống thu thập dữ liệu tương tác của người dùng (như **clicks**, **searches**, và **page visits**) từ website và lưu trữ chúng trong **Amazon S3** dưới dạng **raw logs**. Cứ mỗi giờ, **Amazon EventBridge** sẽ kích hoạt **AWS Lambda** để xử lý và chuyển đổi dữ liệu trước khi nạp vào **data warehouse** được lưu trữ trên **Amazon EC2**.
 
-Dữ liệu đã được xử lý sẽ được trực quan hóa thông qua **R Shiny dashboards**, cung cấp cho chủ cửa hàng các thông tin chi tiết về kinh doanh như mô hình hành vi khách hàng, mức độ phổ biến của sản phẩm, và xu hướng tương tác trên website.
+Dữ liệu đã được xử lý sẽ được visualize thông qua **R Shiny dashboards**, giúp chủ cửa hàng có thể theo dõi business insights như hành vi khách hàng, mức độ phổ biến của sản phẩm, và xu hướng tương tác trên website.
 
-Kiến trúc này tập trung vào **batch analytics**, **ETL pipelines**, và **business intelligence**, đồng thời đảm bảo **bảo mật (security)**, khả năng **mở rộng (scalability)**, và **hiệu quả chi phí (cost efficiency)** thông qua việc tận dụng AWS managed services.
+Kiến trúc này tập trung vào **batch analytics**, **ETL pipeline**, và **business intelligence**, đồng thời đảm bảo **bảo mật (security)**, **khả năng mở rộng (scalability)**, và **hiệu quả chi phí (cost efficiency)** thông qua việc tận dụng các **AWS managed services**.
 
 ### 2. Tuyên bố vấn đề
 
 ### Vấn đề hiện tài là gì?
 
-Các E-commerce websites tạo ra một lượng lớn **clickstream data** — bao gồm product views, cart actions, và search activities — chứa đựng nhiều business insights có giá trị.
+### Vấn đề Đặt ra
 
-Tuy nhiên, các cửa hàng **nhỏ và vừa (SMEs)** thường thiếu hạ tầng (infrastructure) và chuyên môn kỹ thuật (expertise) để thu thập, xử lý và phân tích dữ liệu này một cách hiệu quả.
+Các website E-commerce tạo ra một lượng lớn **clickstream data** — bao gồm product views, cart actions, và search activities — chứa đựng nhiều business insights có giá trị.
 
-Do đó, họ gặp khó khăn trong việc:
+Tuy nhiên, các cửa hàng **small và medium-sized** thường thiếu infrastructure và expertise cần thiết để collect, process, và analyze dữ liệu này một cách hiệu quả.
 
-- Hiểu hành vi mua hàng của khách hàng
-- Xác định sản phẩm hoạt động hiệu quả nhất
-- Tối ưu hóa chiến dịch marketing và hiệu suất website
-- Đưa ra quyết định về tồn kho và định giá dựa trên dữ liệu
+Kết quả là, họ gặp khó khăn trong việc:
+
+- Hiểu hành vi mua hàng của khách hàng (customer purchasing behavior)
+- Xác định sản phẩm hoạt động hiệu quả nhất (top-performing products)
+- Tối ưu hóa marketing campaigns** và **hiệu suất website (website performance)
+- Ra quyết định về tồn kho (inventory) và giá cả (pricing) dựa trên dữ liệu (data-driven decisions)
 
 ### Giải pháp
 
-Dự án này giới thiệu một **AWS-based batch clickstream analytics** hệ thống có khả năng tự động thu thập dữ liệu tương tác của người dùng từ website mỗi giờ, xử lý dữ liệu thông qua serverless functions, và lưu trữ vào central data warehouse trên Amazon EC2.
+Dự án này giới thiệu một **AWS-based batch clickstream analytics** system, tự động **collect** dữ liệu tương tác của người dùng từ website mỗi giờ, process thông qua serverless functions, và lưu trữ vào central data warehouse trên **Amazon EC2**.
 
-Kết quả sau khi xử lý được trực quan hóa bằng **R Shiny dashboards**, giúp chủ cửa hàng thu được actionable insights về hành vi khách hàng (customer behavior) và nâng cao hiệu suất kinh doanh tổng thể (overall business performance).
+Kết quả được visualize bằng **R Shiny dashboards**, giúp chủ cửa hàng có được actionable insights về hành vi khách hàng (customer behavior) và cải thiện hiệu suất kinh doanh tổng thể (overall business performance).
 
 ### Lợi ích và hoàn vốn đầu tư
 
-- **Data-driven decision making**: Khai thác customer preferences, popular products, và shopping trends để hỗ trợ ra quyết định dựa trên dữ liệu.
-- **Scalable and modular design**: Thiết kế có khả năng mở rộng và mô-đun hóa, dễ dàng mở rộng để xử lý nhiều users hơn hoặc tích hợp thêm data sources mới.
-- **Cost-efficient batch processing**: Giảm chi phí tính toán liên tục (continuous compute costs) bằng cách vận hành theo lịch trình định kỳ hàng giờ (scheduled, hourly basis).
-- **Business insight enablement**: Trao quyền cho store owners tối ưu hóa sales strategies và cải thiện revenue thông qua evidence-based analytics.
+### Lợi ích Chính
+
+- **Data-driven decision making**: Khám phá sở thích của khách hàng, sản phẩm phổ biến và xu hướng mua sắm.
+- **Scalable and modular design**: Dễ dàng mở rộng để xử lý nhiều người dùng hơn hoặc tích hợp thêm các nguồn dữ liệu mới.
+- **Cost-efficient batch processing**: Giảm chi phí tính toán liên tục bằng cách vận hành theo lịch trình hàng giờ.
+- **Business insight enablement**: Giúp chủ cửa hàng tối ưu hóa chiến lược bán hàng và cải thiện doanh thu dựa trên phân tích có cơ sở dữ liệu.
 
 ### 3. Kiến trúc giải pháp
-
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.(cần bổ sung)
 
 ![Architecture](/images/2-Proposal/AWS_Architecture_2.jpg)
 
 ### Dịch vụ AWS sử dụng
 
-- **Amazon Cognito**: Xử lý user authentication và authorization cho cả administrators và website customers, đảm bảo truy cập an toàn vào e-commerce platform.
-- **Amazon S3**: Đóng vai trò là lớp lưu trữ dữ liệu tập trung (centralized data storage layer) — lưu trữ static website front-end và raw clickstream logs được thu thập từ user interactions. Ngoài ra, S3 còn tạm thời lưu trữ các batch files trước khi chúng được xử lý và chuyển đến data warehouse.
-- **Amazon CloudFront**: Phân phối nội dung website tĩnh (static website content) trên toàn cầu với độ trễ thấp (low latency), cải thiện trải nghiệm người dùng và lưu cache tài nguyên gần với khách hàng.
-- **Amazon API Gateway**: Đóng vai trò là điểm vào chính (main entry point) cho các API calls từ website, cho phép gửi dữ liệu một cách an toàn (như clickstream hoặc browsing activity) vào hệ thống AWS.
-- **AWS Lambda**: Thực thi serverless functions để tiền xử lý (preprocess) và tổ chức (organize) dữ liệu clickstream được tải lên S3. Lambda cũng xử lý các tác vụ chuyển đổi dữ liệu theo lịch trình (scheduled data transformation jobs) được EventBridge kích hoạt, trước khi tải vào data warehouse.
-- **Amazon EventBridge**: Lên lịch và điều phối (schedules and orchestrates) các batch workflows — ví dụ, kích hoạt Lambda functions mỗi giờ để xử lý và di chuyển clickstream data từ S3 vào EC2 data warehouse.
-- **Amazon EC2 (Data Warehouse)**: Đóng vai trò là môi trường data warehouse, chạy PostgreSQL hoặc một relational database khác để phục vụ batch analytics, trend analysis, và business reporting.
-- **R Shiny (on EC2)**: Lưu trữ các interactive dashboards giúp trực quan hóa các insights đã được xử lý theo batch, hỗ trợ doanh nghiệp khám phá hành vi khách hàng (customer behavior), sản phẩm phổ biến (popular products), và cơ hội bán hàng (sales opportunities).
-- **AWS IAM**: Quản lý quyền truy cập (access permissions) và chính sách (policies) nhằm đảm bảo rằng chỉ những người dùng và thành phần AWS được ủy quyền mới có thể tương tác với data và services.
-- **Amazon CloudWatch**: Thu thập và giám sát (collects and monitors) metrics, logs, và trạng thái công việc theo lịch trình (scheduled job statuses) từ Lambda và EC2, giúp duy trì độ tin cậy của hệ thống (system reliability) và hiển thị hiệu suất (performance visibility).
-- **Amazon SNS**: Gửi thông báo hoặc cảnh báo (notifications or alerts) khi batch jobs hoàn tất, thất bại, hoặc gặp lỗi, đảm bảo nhận biết tình trạng vận hành kịp thời (timely operational awareness).
+### Các Dịch vụ AWS Được Sử Dụng
 
-_Thiết kế thành phần_
-
-- _Thiết bị biên_: Raspberry Pi thu thập và lọc dữ liệu cảm biến, gửi tới IoT Core.
-- _Tiếp nhận dữ liệu_: AWS IoT Core nhận tin nhắn MQTT từ thiết bị biên.
-- _Lưu trữ dữ liệu_: Dữ liệu thô lưu trong S3 data lake; dữ liệu đã xử lý lưu ở một S3 bucket khác.
-- _Xử lý dữ liệu_: AWS Glue Crawlers lập chỉ mục dữ liệu; ETL jobs chuyển đổi để phân tích.
-- _Giao diện web_: AWS Amplify lưu trữ ứng dụng Next.js cho bảng điều khiển và phân tích thời gian thực.
-- _Quản lý người dùng_: Amazon Cognito giới hạn 5 tài khoản hoạt động.
+- **Amazon Cognito**: Quản lý quá trình xác thực và phân quyền người dùng cho cả quản trị viên và khách hàng của website, đảm bảo quyền truy cập an toàn vào nền tảng e-commerce.
+- **Amazon S3**: Hoạt động như một lớp lưu trữ dữ liệu tập trung — lưu trữ giao diện website tĩnh (static website front-end) và các clickstream logs thô được thu thập từ tương tác người dùng. Ngoài ra, nó còn tạm thời lưu trữ các batch files trước khi được xử lý và chuyển đến data warehouse.
+- **Amazon CloudFront**: Phân phối nội dung website tĩnh trên toàn cầu với độ trễ thấp, cải thiện trải nghiệm người dùng và lưu trữ cache gần khách hàng hơn.
+- **Amazon API Gateway**: Đóng vai trò là điểm đầu vào chính cho các API calls từ website, cho phép gửi dữ liệu an toàn (như clickstream hoặc browsing activity) vào AWS.
+- **AWS Lambda**: Thực thi các serverless functions để tiền xử lý và tổ chức clickstream data được tải lên S3. Nó cũng xử lý các tác vụ chuyển đổi dữ liệu được EventBridge kích hoạt theo lịch trước khi nạp vào data warehouse.
+- **Amazon EventBridge**: Lên lịch và điều phối các batch workflows — ví dụ, kích hoạt Lambda functions mỗi giờ để xử lý và di chuyển clickstream data từ S3 vào EC2 data warehouse.
+- **Amazon EC2 (Data Warehouse)**: Đóng vai trò là môi trường data warehouse, chạy PostgreSQL hoặc các cơ sở dữ liệu quan hệ khác phục vụ cho batch analytics, trend analysis và business reporting. Các instances này được triển khai trong private subnet của VPC để đảm bảo cô lập mạng và an toàn.
+- **R Shiny (on EC2)**: Lưu trữ các dashboards tương tác hiển thị các insights đã được xử lý theo batch, giúp doanh nghiệp phân tích hành vi khách hàng, sản phẩm phổ biến và cơ hội bán hàng.
+- **AWS IAM**: Quản lý quyền truy cập và chính sách nhằm đảm bảo chỉ những người dùng và thành phần AWS được ủy quyền mới có thể tương tác với dữ liệu và dịch vụ.
+- **Amazon CloudWatch**: Thu thập và giám sát các metrics, logs, và trạng thái của các scheduled jobs từ Lambda và EC2 để duy trì độ tin cậy và khả năng quan sát hiệu suất hệ thống.
+- **Amazon SNS**: Gửi thông báo hoặc cảnh báo khi batch jobs hoàn thành, thất bại hoặc gặp lỗi, đảm bảo doanh nghiệp kịp thời nắm bắt tình trạng vận hành.
 
 ### 4. Triển khai kỹ thuật
 
 #### End-to-end data flow
 
-1. Auth (Cognito).
+1. Auth (Cognito)
 
-- Trình duyệt (Browser) thực hiện xác thực (authenticate) với Amazon Cognito thông qua Hosted UI hoặc JS SDK.
-- ID token (JWT) được lưu trong bộ nhớ (stored in memory); SDK sẽ tự động đính kèm (attach) header `Authorization: Bearer <JWT>` cho các API calls.
+- Trình duyệt xác thực với Amazon Cognito (Hosted UI hoặc JS SDK).
+- ID token (JWT) được lưu trong bộ nhớ; SDK tự động gắn `Authorization: Bearer <JWT>` cho các API calls.
 
-2. Static web (CloudFront + S3).
+2. Static web (CloudFront + S3)
 
-- SPA/assets được host trên S3; CloudFront nằm phía trước với OAC, gzip/brotli, HTTP/2, và WAF managed rules.
-- Trang web sẽ tải một analytics SDK nhỏ gọn có nhiệm vụ thu thập các sự kiện (events) và gửi chúng đến API Gateway (phía dưới).
+- SPA/assets được lưu trữ trên S3; CloudFront đứng phía trước với OAC, gzip/brotli, HTTP/2, và WAF managed rules.
+- Trang web tải một analytics SDK nhỏ thu thập các events và gửi đến API Gateway (bên dưới).
 
-3. Event ingest (API Gateway).
+3. Event ingest (API Gateway)
 
-- `POST /v1/events` (HTTP API). CORS được giới hạn (locked) theo site origin; JWT authorizer sẽ xác thực (validate) Cognito token (hoặc API key đối với anonymous flows).
-- Các requests sau đó được chuyển tiếp (forwarded) đến Lambda để xử lý.
+- `POST /v1/events` (HTTP API). CORS bị giới hạn theo site origin; JWT authorizer xác thực Cognito token (hoặc API key cho luồng anonymous).
+- Các request được chuyển tiếp đến Lambda.
 
-4. Security & Ops.
+4. Security & Ops
 
-- IAM được cấu hình theo nguyên tắc least-privilege cho từng component.
-- CloudWatch theo dõi logs, metrics, và alarms liên quan đến API 5xx, Lambda errors, throttles, và Shiny health.
-- SNS sẽ gửi thông báo (notify) khi có alarms hoặc khi DLQ tăng trưởng bất thường (DLQ growth).
+- IAM được cấu hình least-privilege cho từng thành phần.
+- CloudWatch ghi log, metrics và cảnh báo trên API 5xx, Lambda errors, throttles, Shiny health.
+- SNS gửi thông báo khi có alarms hoặc DLQ tăng.
 
-5. Processing & storage (Lambda → DynamoDB(datalake) → PostgreSQL on EC2(data warehouse)→ Shiny).
+5. Processing & storage (Lambda → S3 batch buffer → EventBridge → Lambda (ETL) → PostgreSQL trên EC2 (data warehouse) → Shiny)
 
-- Lambda thực hiện xác thực (validate) và làm giàu dữ liệu (enrich) các events, sau đó ghi vào DynamoDB (các bảng session/event).
-- Một ETL job nhỏ chạy trên EC2 sẽ định kỳ (periodically) nén và tổng hợp (compact/aggregate) dữ liệu từ DynamoDB vào curated store (Postgres hoặc DuckDB) trên EC2 data-warehouse node.
-- R Shiny Server (trên EC2) sẽ đọc các curated tables và render dashboards dành cho admins.
+- Ingest Lambda xác thực và enrich các events, sau đó append-write các NDJSON objects vào S3 (partition theo date/hour).
+- EventBridge (cron) kích hoạt ETL Lambda (batch) theo chu kỳ cố định (ví dụ: mỗi 60 phút).
+- ETL Lambda đọc một phần dữ liệu từ các partitions của S3, loại bỏ trùng lặp, chuyển đổi và upsert vào PostgreSQL trên EC2 (truy cập qua VPC).
+- R Shiny Server (trên EC2) đọc các curated tables và hiển thị dashboards cho admin.
 
 #### Data Contracts & Governance
 
@@ -149,60 +146,62 @@ _Thiết kế thành phần_
 
 **Instrumentation**
 
-- Một JS snippet nhỏ được tải trên toàn bộ website (site-wide) với thuộc tính defer.
-- Đoạn mã này tạo `anonymous_id` một lần và lưu `session_id` trong `localStorage`; session sẽ tự động roll sau 30 phút không hoạt động.
-- Các events được gửi qua navigator.sendBeacon; nếu thất bại, fallback sang `fetch` với retry & jitter.
+- JS snippet nhỏ được load trên toàn site (defer).
+- Sinh anonymous_id một lần và lưu session_id trong localStorage; session reset sau 30 phút không hoạt động.
+- Gửi events qua navigator.sendBeacon; fallback sang fetch với retry và jitter.
 
 **Auth context**
 
-- Nếu người dùng đăng nhập bằng Cognito, hãy bao gồm trường `user_id = idToken.sub` để kích hoạt (enable) các logged-in funnels.
+- Nếu người dùng đăng nhập bằng Cognito, bao gồm user_id = idToken.sub để theo dõi funnel đăng nhập.
 
 **Offline durability**
 
-- Optional Service Worker queue: khi offline, tạm lưu (buffer) các events trong IndexedDB và gửi lại (flush) khi kết nối được khôi phục (on reconnect).
+- Service Worker queue tùy chọn: khi offline, buffer events trong IndexedDB và gửi lại khi reconnect.
 
 #### Ingestion API (API Gateway → Lambda)
 
 **API Gateway (HTTP API)**
 
 - Route: `POST /v1/events`.
-- JWT authorizer: sử dụng Cognito user pool. Đối với các anonymous pre-login events, dùng API key usage-plan với rate limits nghiêm ngặt (strict rate limits).
-- WAF: sử dụng AWS Managed Core + Bot Control; chặn (block) các non-site origins thông qua strict CORS.
+- JWT authorizer (Cognito user pool). Đối với anonymous pre-login events, sử dụng API key với usage-plan và rate limit nghiêm ngặt.
+- WAF: AWS Managed Core + Bot Control; chặn non-site origins bằng strict CORS.
 
 **Lambda (Node.js or Python)**
 
-- Validate: kiểm tra dữ liệu dựa trên JSON Schema (sử dụng ajv/pydantic).
-- Idempotency: kiểm tra `event_id` gần đây trong bảng DynamoDB nhỏ hoặc in-memory cache có TTL để tránh xử lý trùng lặp.
-- Enrichment: trích xuất `date/hour`, phân tích UA (User-Agent), và suy luận country từ `CloudFront-Viewer-Country` (nếu có).
-- Persist: thực hiện `PutItem` vào bảng `events`, và `UpdateItem` để cập nhật `sessions.last_seen` cùng `page_count`.
-- Failure path: publish các sự kiện lỗi lên SQS DLQ; gửi alarm qua SNS nếu DLQ depth > 0.
+- Validate theo JSON Schema (ajv/pydantic).
+- Idempotency: cache `event_id` gần đây trong bộ nhớ (TTL ngắn) + dedupe ở mức batch trong ETL.
+- Enrichment: xác định `date/hour`, phân tích UA, suy luận country từ `CloudFront-Viewer-Country` nếu có.
+- Persist: PutObject vào đường dẫn `S3 .../year=YYYY/month=MM/day=DD/hour=HH/....`
+- Failure path: publish vào SQS DLQ; cảnh báo qua SNS nếu DLQ depth > 0.
 
 #### Batch Buffer (S3)
 
-- Purpose: cung cấp bộ đệm (buffer) rẻ tiền, bền vững cho batch analytics.
-- Write pattern: ghi các object nhỏ cho từng request hoặc micro-batches (ví dụ: 1–5 MB mỗi object) với GZIP. Optional compactor có thể gộp thành các file ≥64MB để tăng hiệu quả đọc (efficient reads).
-- Read pattern: ETL Lambda chỉ scan các partition/object mới kể từ last watermark.
-- Schema-on-read: ETL áp dụng schema khi đọc, đồng thời xử lý dữ liệu đến muộn (late-arriving data) bằng cách reprocess một cửa sổ trượt nhỏ (ví dụ: 2 giờ gần nhất) để chỉnh sửa sessions.
+- Mục đích: buffer bền vững, chi phí thấp cho batch analytics.
+- Write pattern: các object nhỏ mỗi request hoặc micro-batches (1–5 MB) với GZIP. Optional compactor gộp thành file ≥64MB để đọc hiệu quả hơn.
+- Read pattern: ETL Lambda chỉ quét các partitions/objects mới kể từ watermark cuối.
+- Schema-on-read: ETL áp dụng schema, xử lý dữ liệu đến trễ bằng cách reprocess một sliding window nhỏ (ví dụ: 2 giờ cuối) để điều chỉnh sessions.
 
 #### EC2 “data warehouse” node
 
-Purpose: chạy ETL và host curated analytical store mà Shiny sẽ truy vấn. Có hai lựa chọn:
+Mục đích: chạy ETL và lưu trữ analytical store được Shiny truy vấn. Hai lựa chọn:
 
-- Postgres trên EC2 (khuyến nghị nếu team thích SQL/window functions)
-  - Instance: t3.small / t4g.small; gp3 50–100GB
-  - Schema: `fact_events`, `fact_sessions`, `dim_date`, `dim_product`
-  - Security: đặt trong VPC private subnet; truy cập thông qua ALB / SSM Session Manager; tự động snapshot hàng ngày vào S3
-- ETL (Lambda, batch qua EventBridge cron)
-  - Trigger: chạy theo chu kỳ rate(5 minutes) hoặc cron(...) tùy thuộc vào cost và freshness (mức độ cập nhật dữ liệu).
-  - Các bước: liệt kê các S3 objects mới → đọc dữ liệu → validate/dedupe (kiểm tra hợp lệ và loại bỏ trùng lặp) → transform (làm phẳng cấu trúc nested JSON, ép kiểu dữ liệu, thêm ingest_date, session_window_start/end) → upsert vào Postgres bằng COPY vào temp tables rồi merge, hoặc thực hiện batched INSERT ... ON CONFLICT.
-  - Networking: Lambda được gắn với VPC private subnets để có thể truy cập EC2 Postgres security group.
+- Postgres trên EC2 (khuyến nghị nếu nhóm quen SQL/window functions)
+
+  - Instance: t3.small/t4g.small; gp3 50–100GB.
+  - Schema: `fact_events`, `fact_sessions`, `dim_date`, `dim_product`.
+  - Security: trong private subnet của VPC; truy cập qua ALB/SSM Session Manager; snapshot tự động hàng ngày lên S3.
+
+- ETL (Lambda, batch qua EventBridge cron):
+  - Trigger: rate(5 minutes) / cron(...) tùy theo cost & freshness.
+  - Các bước: liệt kê S3 objects mới → đọc → validate/dedupe → transform (flatten JSON, cast types, thêm ingest_date, session_window_start/end) → upsert vào Postgres bằng COPY tới bảng tạm + merge, hoặc batched INSERT ... ON CONFLICT.
+  - Networking: Lambda kết nối vào private subnets của VPC để truy cập Postgres security group trên EC2.
 
 #### R Shiny Server on EC2 (admin analytics)
 
 **Server**
 
-- EC2 (t3.small/t4g.small) với các thành phần: R 4.4+, Shiny Server (open-source), Nginx reverse proxy, TLS thông qua ACM/ALB hoặc Let’s Encrypt.
-- IAM instance profile (không dùng static keys). Security group cho phép HTTPS từ office/VPN hoặc Cognito-gated admin site.
+- EC2 (t3.small/t4g.small) với: R 4.4+, Shiny Server (open-source), Nginx reverse proxy, TLS qua ACM/ALB hoặc Let’s Encrypt.
+- IAM instance profile (không dùng static keys). Security group chỉ cho phép HTTPS từ office/VPN hoặc Cognito-gated admin site.
 
 **App (packages)**
 
@@ -219,15 +218,15 @@ Purpose: chạy ETL và host curated analytical store mà Shiny sẽ truy vấn.
 
 **Caching**
 
-- Query results được cache trong quá trình xử lý (in-process) thông qua reactive values hoặc materialized bởi ETL; các cache keys được tạo dựa trên date range và filters.
+- Kết quả truy vấn được cache trong process (reactive values) hoặc materialized bởi ETL; cache keys dựa trên date range và filters.
 
 #### Security baseline
 
 **IAM**
 
 - Ingest Lambda: quyền s3:PutObject tới raw bucket (giới hạn theo prefix), s3:ListBucket trên các prefix cần thiết.
-- ETL Lambda: quyền s3:GetObject/ListBucket trên các raw prefixes; có quyền lấy secrets từ SSM Parameter Store; không có quyền truy cập rộng vào S3.
-- EC2 roles: chỉ read/write tới DB/volumes riêng của nó; tùy chọn read S3 cho backups.
+- ETL Lambda: quyền s3:GetObject/ListBucket trên raw prefixes; được phép lấy secrets từ SSM Parameter Store; không có quyền S3 rộng.
+- EC2 roles: chỉ đọc/ghi vào DB/volumes của chính nó; có thể đọc từ S3 để backup.
 - Shiny EC2: không ghi vào S3 raw; chỉ read-only tới Postgres khi cần.
 
 **Network**
@@ -245,9 +244,9 @@ Purpose: chạy ETL và host curated analytical store mà Shiny sẽ truy vấn.
 
 **CloudWatch metrics/alarms**
 
-- Theo dõi: API Gateway 5xx/latency, Lambda errors/throttles, DLQ depth, DynamoDB throttles, ETL job exit code/lag, Shiny health check.
+- API Gateway 5xx/latency, Lambda (ingest) errors/throttles, S3 PutObject failures, EventBridge schedule success rate, ETL duration/lag, DLQ depth, Shiny health check.
 
-**SNS topics**: gửi email/SMS/Slack webhook cho on-call team.
+**SNS topics**: gửi thông báo on-call qua email/SMS/Slack webhook.
 **Structured logs**: JSON logs từ Lambda & ETL (bao gồm request_id, event_type, status, ms, error_code).
 **Watermark tracking**: custom metric “DW Freshness (minutes since last successful upsert)”.
 
@@ -276,15 +275,23 @@ Purpose: chạy ETL và host curated analytical store mà Shiny sẽ truy vấn.
 
 #### Tháng 1 – Học tập & Chuẩn bị
 
-Nghiên cứu một loạt các AWS services bao gồm compute, storage, analytics, và security. Hiểu các khái niệm chính về kiến trúc đám mây (cloud architecture), data pipelines, và serverless computing. Tổ chức các cuộc họp nhóm để đồng bộ mục tiêu dự án và phân công nhiệm vụ.
+Nghiên cứu nhiều dịch vụ AWS bao gồm compute, storage, analytics và security.  
+Hiểu các khái niệm chính của cloud architecture, data pipelines và serverless computing.  
+Tổ chức các cuộc họp nhóm để thống nhất mục tiêu dự án và phân công trách nhiệm cho từng thành viên.
 
 #### Tháng 2 – Thiết kế kiến trúc & Prototyping
 
-Thiết kế kiến trúc tổng thể của dự án và xác định luồng dữ liệu giữa các thành phần. Thiết lập các AWS resources ban đầu như S3, Lambda, API Gateway, EventBridge, và EC2. Thử nghiệm với các công cụ mã nguồn mở để trực quan hóa và báo cáo. Kiểm tra sample code và xác thực pipeline thu thập và xử lý dữ liệu.
+Thiết kế kiến trúc tổng thể của dự án và xác định luồng dữ liệu giữa các thành phần.  
+Thiết lập các tài nguyên AWS ban đầu như S3, Lambda, API Gateway, EventBridge và EC2.  
+Thử nghiệm các công cụ mã nguồn mở cho việc visualization và reporting.  
+Kiểm thử mã mẫu và xác thực quy trình data ingestion và processing pipeline.
 
 #### Tháng 3 – Triển khai & Kiểm thử
 
-Triển khai toàn bộ kiến trúc dựa trên thiết kế đã được phê duyệt. Tích hợp tất cả các dịch vụ AWS và đảm bảo độ tin cậy của hệ thống. Thực hiện kiểm thử hiệu năng và chức năng. Hoàn thiện tài liệu và chuẩn bị dự án cho buổi trình bày.
+Triển khai toàn bộ kiến trúc dựa trên bản thiết kế đã được phê duyệt.  
+Tích hợp tất cả các dịch vụ AWS và đảm bảo độ tin cậy của hệ thống.  
+Thực hiện kiểm thử hiệu năng và chức năng.  
+Hoàn thiện tài liệu và chuẩn bị dự án cho buổi thuyết trình.
 
 ### 6. Ước tính ngân sách
 

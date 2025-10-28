@@ -25,23 +25,23 @@ Bắt đầu với LocalStack trong VS Code rất đơn giản. Developer có th
 
 Đầu tiên, tôi sẽ cập nhật bản AWS Toolkit for VS Code của mình lên phiên bản mới nhất. Sau khi làm điều này, tôi có thể thấy một tùy chọn mới khi vào **Application Builder** và nhấp vào **Walkthrough** **of Application Builder**. Tùy chọn này cho phép tôi cài đặt LocalStack chỉ với một lần nhấp.
 
-![anh](/static/images/image-01.png)
+![anh](/images/image-01.png)
 
 Sau khi tôi hoàn tất quá trình setup cho LocalStack, tôi có thể khởi chạy nó từ status bar và sau đó chọn LocalStack từ danh sách các [configured AWS profiles](https://docs.aws.amazon.com/cli/v1/userguide/cli-chap-configure.html). Trong ví dụ minh họa này, tôi đang sử dụng Application Composer để xây dựng một serverless architecture đơn giản với [Amazon API Gateway](https://aws.amazon.com/api-gateway/), Lambda, và DynamoDB. Thông thường, tôi sẽ deploy nó lên AWS bằng cách sử dụng AWS SAM. Trong trường hợp này, tôi sẽ dùng cùng một lệnh AWS SAM để deploy stack của mình trong môi trường local.
 
-![anh](/static/images/image-02.png)
+![anh](/images/image-02.png)
 
 Tôi chỉ cần chạy lệnh `sam deploy –guided –profile localstack` từ command line và làm theo các bước hướng dẫn như bình thường. Deploying lên LocalStack bằng AWS SAM CLI mang lại trải nghiệm hoàn toàn giống với khi tôi deploy lên AWS. Trong ảnh chụp màn hình bên dưới, tôi có thể thấy standard output từ AWS SAM, cũng như các tài nguyên LocalStack mới của tôi được liệt kê trong AWS Toolkit Explorer.
 
-![anh](/static/images/image-03.png)
+![anh](/images/image-03.png)
 
 Tôi thậm chí có thể truy cập vào một Lambda function và chỉnh sửa function code mà tôi đã deploy cục bộ!
 
-![anh](/static/images/image-04.png)
+![anh](/images/image-04.png)
 
 Trên trang web LocalStack, tôi có thể đăng nhập và xem tất cả các resources mà tôi đang chạy cục bộ. Trong ảnh chụp màn hình bên dưới, bạn có thể thấy DynamoDB table cục bộ mà tôi vừa deploy.
 
-![anh](/static/images/image-05.png)
+![anh](/images/image-05.png)
 
 ## Quy trình phát triển được nâng cao
 

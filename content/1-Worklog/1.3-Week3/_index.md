@@ -25,10 +25,10 @@ pre: " <b> 1.3. </b> "
 
 - Create an EC2 instance: first connect on AWS, then connect using PuTTY to access the CLI, and enter the user login to sign in.
 
-![anh](/static/images/b1.png)
-![anh](/static/images/b2.png)
-![anh](/static/images/b3.png)
-![anh](/static/images/b4.png)
-![anh](/static/images/b5.png)
-![anh](/static/images/b6.png)
-![anh](/static/images/b7.png)
+![anh](/images/b1.png)
+![anh](/images/b2.png)
+![anh](/images/b3.png)
+![anh](/images/b4.png)
+![anh](/images/b5.png)
+![anh](/images/b6.png)
+![anh](/images/b7.png)

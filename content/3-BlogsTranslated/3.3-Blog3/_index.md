@@ -19,7 +19,7 @@ In this post, we’ll demonstrate how to implement AWS Backup using AWS Control 
 
 AWS Control Tower now offers built-in capabilities to streamline your backup management at scale with direct AWS Backup integration. This capability automatically provisions a central backup vault in each AWS Region within a dedicated central backup account. As your organization scales to more accounts and regions, AWS Control Tower automatically creates local backup vaults in each workload account in AWS Backup-enabled organizational units (OUs) across all governed AWS Regions. You can customize your backup strategy by configuring backup policies that copy your backups from local vaults to central vaults, either within the same Region or cross-Region. Moreover, you don’t need custom deployment pipelines or complex automation. You can use AWS Backup policies to implement a comprehensive backup strategy that meets your organization’s specific requirements while maintaining consistent governance across your AWS environment.
 
-![anh](/static/images)
+![anh](/images)
 
 ## Prerequisites
 
@@ -57,11 +57,11 @@ You can now to integrate AWS Backup with your AWS Control Tower landing zone. Na
 
 You can choose the accounts created in Step 1 and the AWS KMS key in Step 2 from the drop down list in each text box, as shown in the following figure.
 
-![anh](/static/images)
+![anh](/images)
 
 The landing zone update process may take 30-45 minutes to complete. When it is finished, you should see the AWS Backup status as **Enabled**, and your specified accounts and AWS KMS keys should appear in the AWS Control Tower console, as shown in the following figure.
 
-![anh](/static/images)
+![anh](/images)
 
 ### Step 4: Configure service opt-in and enable delegated administrator
 
@@ -73,21 +73,21 @@ Navigate to AWS Backup console, choose Settings, and in the Service opt-in list:
 - This must be done manually in the AWS Backup console.
 - Backup service opt-in is an AWS Region-based setting, and you must repeat the process for all AWS Control Tower governed AWS Regions.
 
-![anh](/static/images)
+![anh](/images)
 
 Finally, set the backup administrator account as a delegated administrator to enable organization-wide backup task monitoring and backup policy management from this account, as shown in the following figure.
 
-![anh](/static/images)
+![anh](/images)
 
 ### Step 5: Enable AWS Backup baseline on specific OUs
 
 After configuring the preceding core backup infrastructure, you must enable the AWS Backup baseline on your desired OUs. Navigate to the AWS Control Tower console, choose Organization from the left navigation pane, choose the OU where you want to enable backup, then find and enable the option AWS Backup on this OU, as shown in the following figure
 
-![anh](/static/images)
+![anh](/images)
 
 The order of enablement is critical, so when enabling the AWS Backup baseline across your organization, follow a hierarchical approach. Start with the top-level OUs before proceeding to child OUs. In the example shown in the following figure, you would first enable the AWS Backup baseline on the Workloads top-level OU, then proceed to child OUs such as Workloads X, Workloads Y, etc.
 
-![anh](/static/images)
+![anh](/images)
 
 ### Step 6: Tag resources for backup
 
@@ -122,7 +122,7 @@ Now you are ready to remove the AWS Backup integration from your AWS Control Tow
 
 AWS Control Tower removes the integration while preserving your existing backup data, as shown in the following figure.
 
-![anh](/static/images)
+![anh](/images)
 
 ### Step 3: Clean up additional resources
 

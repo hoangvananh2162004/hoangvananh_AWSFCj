@@ -84,10 +84,10 @@ pre: " <b> 1.2. </b> "
   - Tạo **Internet gateways**
   - Tạo **Security groups**
 
-![anh](/static/images/a1.png)
-![anh](/static/images/a2.png)
-![anh](/static/images/a3.png)
-![anh](/static/images/a4.png)
-![anh](/static/images/a5.png)
-![anh](/static/images/a6.png)
-![anh](/static/images/a7.png)
+![anh](/images/a1.png)
+![anh](/images/a2.png)
+![anh](/images/a3.png)
+![anh](/images/a4.png)
+![anh](/images/a5.png)
+![anh](/images/a6.png)
+![anh](/images/a7.png)

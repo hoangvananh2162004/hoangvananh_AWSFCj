@@ -11,7 +11,7 @@ pre: " <b> 2. </b> "
 
 ### 1. Executive Summary
 
-This project aims to design and implement a **Batch-based Clickstream Analytics Platform** for a computer and accessories e-commerce website using **AWS Cloud Services**.
+This project aims to design and implement a **Batch-based Clickstream Analytics Platform** for a computer and accessories e-commerce website (The website’s frontend integrates a lightweight JavaScript SDK that sends user activity data (clicks, views, searches) to the backend API) using **AWS Cloud Services**.
 The system collects user interaction data (such as clicks, searches, and page visits) from the website and stores it in **Amazon S3** as raw logs. Every hour, **Amazon EventBridge** triggers **AWS Lambda** functions to process and transform the data before loading it into a **data warehouse hosted on Amazon EC2**.
 
 The processed data is visualized through **R Shiny dashboards**, providing store owners with business insights such as customer behavior patterns, product popularity, and website engagement trends.
@@ -22,7 +22,7 @@ This architecture focuses on **batch analytics**, **ETL pipeline**s, and **busin
 
 ### What’s the Problem?
 
-E-commerce websites generate a large volume of c**lickstream data—including** product views, cart actions, and search activities—that contain valuable business insights.
+E-commerce websites generate a large volume of **clickstream data—including** product views, cart actions, and search activities—that contain valuable business insights.
 
 However, **small and medium-sized** stores often lack the infrastructure and expertise to collect, process, and analyze this data effectively.
 
@@ -58,7 +58,7 @@ The results are visualized using **R Shiny dashboards**, enabling store owners t
 - **Amazon API Gateway**: Serves as the main entry point for incoming API calls from the website, enabling secure data submission (such as clickstream or browsing activity) into AWS.
 - **AWS Lambda**: Executes serverless functions to preprocess and organize clickstream data uploaded to S3. It also handles scheduled data transformation jobs triggered by EventBridge before loading them into the data warehouse.
 - **Amazon EventBridge**: Schedules and orchestrates batch workflows — for example, triggering Lambda functions every hour to process and move clickstream data from S3 into the EC2 data warehouse.
-- **Amazon EC2 (Data Warehouse)**: Acts as the data warehouse environment, running PostgreSQL or another relational database for batch analytics, trend analysis, and business reporting.
+- **Amazon EC2 (Data Warehouse)**: Acts as the data warehouse environment, running PostgreSQL or another relational database for batch analytics, trend analysis, and business reporting. Both instances are deployed inside a VPC private subnet for network isolation and security
 - **R Shiny (on EC2)**: Hosts interactive dashboards that visualize batch-processed insights, helping the business explore customer behavior, popular products, and sales opportunities.
 - **AWS IAM**: Manages access permissions and policies to ensure that only authorized users and AWS components can interact with data and services.
 - **Amazon CloudWatch**: Collects and monitors metrics, logs, and scheduled job statuses from Lambda and EC2 to maintain system reliability and performance visibility.
@@ -89,10 +89,11 @@ The results are visualized using **R Shiny dashboards**, enabling store owners t
 - CloudWatch logs/metrics/alarms on API 5xx, Lambda errors, throttles, Shiny health.
 - SNS notifies on alarms & DLQ growth.
 
-5. Processing & storage (Lambda → DynamoDB(datalake) → PostgreSQL on EC2(data warehouse)→ Shiny).
+5. Processing & storage (Lambda → S3 batch buffer → EventBridge → Lambda(ETL) → PostgreSQL on EC2 (data warehouse) → Shiny).
 
-- Lambda validates/enriches events and writes to DynamoDB (session/event tables).
-- A small ETL job on EC2 periodically compacts/aggregates DynamoDB data into a curated store (Postgres or DuckDB) on the EC2 data-warehouse node.
+- Ingest Lambda validates/enriches events then append-writes NDJSON objects into S3 (partitioned by date/hour).
+- EventBridge (cron) triggers an ETL Lambda (batch) on a fixed cadence (e.g., every 60 minutes).
+- ETL Lambda reads a slice of S3 partitions, deduplicates, transforms, and upserts into PostgreSQL on EC2 (VPC access).
 - R Shiny Server (on EC2) reads curated tables and renders dashboards for admins.
 
 #### Data Contracts & Governance
@@ -162,9 +163,9 @@ The results are visualized using **R Shiny dashboards**, enabling store owners t
 **Lambda (Node.js or Python)**
 
 - Validate against JSON Schema (ajv/pydantic).
-- Idempotency: check recent `event_id` in a small DynamoDB table or in-memory cache w/ TTL.
-- Enrichment: derive `date/hour`, parse UA, infer country from `CloudFront-Viewer-Country` if present.
-- Persist: `PutItem` to `events`, `UpdateItem` to bump `sessions.last_see`n and `page_count`.
+- Idempotency: recent `event_id` cache in memory (short TTL) + batch-level dedupe during ETL.
+- Enrichment: derive date/hour, parse UA, infer country from `CloudFront-Viewer-Country` if present.
+- Persist: PutObject to S3 path `.../year=YYYY/month=MM/day=DD/hour=HH/....`
 - Failure path: publish to SQS DLQ; alarm via SNS if DLQ depth > 0.
 
 #### Batch Buffer (S3)
@@ -182,7 +183,7 @@ Purpose: run ETL + host the curated analytical store that Shiny queries. Two cho
   - Instance: t3.small/t4g.small; gp3 50–100GB.
   - Schema: `fact_events`, `fact_sessions`, `dim_date`, `dim_product`.
   - Security: within VPC private subnet; access via ALB/SSM Session Manager; automated daily snapshots to S3
-- ETL (Lambda, batch via EventBridge cron)
+- ETL (Lambda, batch via EventBridge cron):
   - Trigger: rate(5 minutes) / cron(...) depending on cost & freshness.
   - Steps: list new S3 objects → read → validate/dedupe → transform (flatten nested JSON, cast types, add ingest_date, session_window_start/end) → upsert into Postgres using COPY to temp tables + merge, hoặc batched INSERT ... ON CONFLICT.
   - Networking: Lambda attached to VPC private subnets to reach EC2 Postgres security group.
@@ -235,7 +236,7 @@ Purpose: run ETL + host the curated analytical store that Shiny queries. Two cho
 
 **CloudWatch metrics/alarms**
 
-- API Gateway 5xx/latency, Lambda errors/throttles, DLQ depth, DynamoDB throttles, ETL job exit code/lag, Shiny health check.
+- API Gateway 5xx/latency, Lambda (ingest) errors/throttles, S3 PutObject failures, EventBridge schedule success rate, ETL duration/lag, DLQ depth, Shiny health check
 
 **SNS topics**: on-call email/SMS/Slack webhook.
 

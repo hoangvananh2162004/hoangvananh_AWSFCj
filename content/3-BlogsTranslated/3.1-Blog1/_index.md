@@ -15,7 +15,7 @@ The [blue/green deployment](https://docs.aws.amazon.com/whitepapers/latest/blue-
 
 When an Amazon ECS [service](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html) is created or updated, we create an immutable object of its exact specification, known as an Amazon ECS [service revision](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-revision.html). Then, the control plane attempts to deploy this service revision through an Amazon ECS [service deployment](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html). A deployment goes through [multiple lifecycle states](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-deployment.html#service-deployments-states), such as IN_PROGRESS and SUCCESSFUL. As part of the recent blue/green release, there is a new subcategory underneath these states, known as lifecycle stages. When a deployment has started, we work through each lifecycle stage linearly, with the option to extend the deployment with custom logic packaged in lifecycle hooks. The following figure shows the relationship between lifecycle states, lifecycle stages, and lifecycle hooks.
 
-![anh](/static/images/C45-1.png)
+![anh](/images/C45-1.png)
 
 Lifecycle hooks are synchronous [AWS Lambda](https://aws.amazon.com/lambda/) functions that the Amazon ECS control plane invokes on your behalf. You can write any logic you’d like in these functions in any runtime language you choose. When the function has finished executing its logic, it must return a hookStatus for the Amazon ECS deployment to continue. If a hookStatus is not returned, or if the function fails, then the Amazon ECS deployment rolls back.
 
@@ -25,7 +25,7 @@ The values of the hookStatus can either be:
 - `FAILED`: the deployment rolls back to the last successful deployment.
 - `IN_PROGRESS`: the Amazon ECS control plane invokes the function again after a short period of time. By default, this is 30 seconds, but this can be tuned by returning a `callBackDelay`.
 
-![anh](/static/images/C45-2.png)
+![anh](/images/C45-2.png)
 
 #### IN_PROGRESS hook status
 
@@ -166,11 +166,11 @@ create-service \
 
 3. In the Amazon [console](https://us-west-2.console.aws.amazon.com/ecs/home) you can monitor this deployment. The** Current Deployment stage** within the **Deployment tab** shows us which stage of the lifecycle the deployment is in. Remember our first lifecycle hook runs at the `PRE_SCALE_UP` stage.
 
-![anh](/static/images/C45-3.png)
+![anh](/images/C45-3.png)
 
 4. You can verify that the lifecycle hook executed successfully by browsing to the [Amazon CloudWatch Logs console](https://aws.amazon.com/cloudwatch/), and choosing the Log Group starting with the name `/aws/lambda/EcsBlugreenHookStack-admissionFunction`.
 
-![anh](/static/images/C45-4.png)
+![anh](/images/C45-4.png)
 
 Success! The container images used within our task definition were verified against our policy before the task was scheduled.
 
@@ -234,11 +234,11 @@ update-service \
 
 3. You can monitor the ongoing deployment in the Amazon [ECS console](https://us-west-2.console.aws.amazon.com/ecs/home), watching the service move through the various lifecycle stages. When the deployment reaches the `POST_TEST_TRAFFIC_SHIFT` stage, we can check the progress of our hook.
 
-![anh](/static/images/C45-5.png)
+![anh](/images/C45-5.png)
 
 4. The CloudWatch Logs console gives us insight into what is happening at this stage. In a log group starting with `/aws/lambda/EcsBlugreenHookStack-approvalFunction`, we should see invocations of our function every 30 seconds attempting to retrieving the file from Amazon S3.
 
-![anh](/static/images/C45-6.png)
+![anh](/images/C45-6.png)
 
 5. To allow our deployment pipeline to continue, we upload a file to the S3 bucket. First, we need to retrieve the Amazon ECS service revision ARN, shorten it to just the service revision ID, and use that as the file name.
 
@@ -262,7 +262,7 @@ aws s3 cp $SERVICE_REVISION_ID.txt s3://$S3_BUCKET_NAME/$SERVICE_REVISION_ID.txt
 
 6. Now that the file exists in Amazon S3, we can go back to the Amazon ECS console and watch the deployment complete.
 
-![anh](/static/images/C45-7.png)
+![anh](/images/C45-7.png)
 
 ## Cleaning up
 

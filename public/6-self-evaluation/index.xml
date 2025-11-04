@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Self-Assessment on Report</title>
-    <link>http://localhost:1313/hoangvananh_AWSFCj/6-self-evaluation/</link>
+    <link>http://localhost:1313/vananh_AWSFCJ.git/6-self-evaluation/</link>
     <description>Recent content in Self-Assessment on Report</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/hoangvananh_AWSFCj/6-self-evaluation/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/vananh_AWSFCJ.git/6-self-evaluation/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

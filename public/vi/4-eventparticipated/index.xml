@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Các events đã tham gia on Báo Cáo</title>
-    <link>http://localhost:1313/vananh_AWSFCJ.git/vi/4-eventparticipated/</link>
+    <link>http://localhost:1313/hoangvananh_AWSFCj/vi/4-eventparticipated/</link>
     <description>Recent content in Các events đã tham gia on Báo Cáo</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="http://localhost:1313/vananh_AWSFCJ.git/vi/4-eventparticipated/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/hoangvananh_AWSFCj/vi/4-eventparticipated/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

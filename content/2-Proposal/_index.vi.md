@@ -52,8 +52,6 @@ Kết quả được visualize bằng **R Shiny dashboards**, giúp chủ cửa 
 
 ### 3. Kiến trúc giải pháp
 
-Nền tảng áp dụng kiến trúc AWS Serverless để quản lý dữ liệu từ 5 trạm dựa trên Raspberry Pi, có thể mở rộng lên 15 trạm. Dữ liệu được tiếp nhận qua AWS IoT Core, lưu trữ trong S3 data lake và xử lý bởi AWS Glue Crawlers và ETL jobs để chuyển đổi và tải vào một S3 bucket khác cho mục đích phân tích. Lambda và API Gateway xử lý bổ sung, trong khi Amplify với Next.js cung cấp bảng điều khiển được bảo mật bởi Cognito.(cần bổ sung)
-
 ![Architecture](/images/2-Proposal/AWS_Architecture_ver4.png)
 
 ### Dịch vụ AWS sử dụng

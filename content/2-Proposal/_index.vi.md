@@ -20,9 +20,7 @@ Kiến trúc này tập trung vào **batch analytics**, **ETL pipeline**, và **
 
 ### 2. Tuyên bố vấn đề
 
-### Vấn đề hiện tài là gì?
-
-### Vấn đề Đặt ra
+#### Vấn đề hiện tài là gì?
 
 Các website E-commerce tạo ra một lượng lớn **clickstream data** — bao gồm product views, cart actions, và search activities — chứa đựng nhiều business insights có giá trị.
 
@@ -35,15 +33,13 @@ Kết quả là, họ gặp khó khăn trong việc:
 - Tối ưu hóa marketing campaigns** và **hiệu suất website (website performance)
 - Ra quyết định về tồn kho (inventory) và giá cả (pricing) dựa trên dữ liệu (data-driven decisions)
 
-### Giải pháp
+#### Giải pháp
 
 Dự án này giới thiệu một **AWS-based batch clickstream analytics** system, tự động **collect** dữ liệu tương tác của người dùng từ website mỗi giờ, process thông qua serverless functions, và lưu trữ vào central data warehouse trên **Amazon EC2**.
 
 Kết quả được visualize bằng **R Shiny dashboards**, giúp chủ cửa hàng có được actionable insights về hành vi khách hàng (customer behavior) và cải thiện hiệu suất kinh doanh tổng thể (overall business performance).
 
-### Lợi ích và hoàn vốn đầu tư
-
-### Lợi ích Chính
+#### Lợi ích và hoàn vốn đầu tư
 
 - **Data-driven decision making**: Khám phá sở thích của khách hàng, sản phẩm phổ biến và xu hướng mua sắm.
 - **Scalable and modular design**: Dễ dàng mở rộng để xử lý nhiều người dùng hơn hoặc tích hợp thêm các nguồn dữ liệu mới.
@@ -55,8 +51,6 @@ Kết quả được visualize bằng **R Shiny dashboards**, giúp chủ cửa 
 ![Architecture](/images/2-Proposal/AWS_Architecture_ver4.png)
 
 ### Dịch vụ AWS sử dụng
-
-### Các Dịch vụ AWS Được Sử Dụng
 
 - **Amazon Cognito**: Quản lý quá trình xác thực và phân quyền người dùng cho cả quản trị viên và khách hàng của website, đảm bảo quyền truy cập an toàn vào nền tảng e-commerce.
 - **Amazon S3**: Hoạt động như một lớp lưu trữ dữ liệu tập trung — lưu trữ giao diện website tĩnh (static website front-end) và các clickstream logs thô được thu thập từ tương tác người dùng. Ngoài ra, nó còn tạm thời lưu trữ các batch files trước khi được xử lý và chuyển đến data warehouse.

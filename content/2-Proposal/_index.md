@@ -20,7 +20,7 @@ This architecture focuses on **batch analytics**, **ETL pipeline**s, and **busin
 
 ### 2. Problem Statement
 
-### What’s the Problem?
+#### What’s the Problem?
 
 E-commerce websites generate a large volume of **clickstream data—including** product views, cart actions, and search activities—that contain valuable business insights.
 
@@ -33,13 +33,13 @@ As a result, they face difficulties in:
 - Optimizing marketing campaigns and website performance
 - Making data-driven inventory and pricing decisions
 
-### The Solution
+#### The Solution
 
 This project introduces an **AWS-based batch clickstream analytics** system that automatically collects user interaction data from the website every hour, processes it through serverless functions, and stores it in a central data warehouse on **Amazon EC2**.
 
 The results are visualized using **R Shiny dashboards**, enabling store owners to gain actionable insights into customer behavior and improve overall business performance.
 
-### Benefits and Return on Investment
+#### Benefits and Return on Investment
 
 - **Data-driven decision making**: Discover customer preferences, popular products, and shopping trends.
 - **Scalable and modular design**: Easily extendable to handle more users or additional data sources.
@@ -50,7 +50,7 @@ The results are visualized using **R Shiny dashboards**, enabling store owners t
 
 ![Architecture](/images/2-Proposal/AWS_Architecture_ver4.png)
 
-### AWS Services Used
+#### AWS Services Used
 
 - **Amazon Cognito**: Handles user authentication and authorization for both administrators and website customers, ensuring secure access to the e-commerce platform.
 - **Amazon S3**: Acts as a centralized data storage layer — hosting the static website front-end and storing raw clickstream logs collected from user interactions. It also temporarily holds batch files before they are processed and transferred to the data warehouse.

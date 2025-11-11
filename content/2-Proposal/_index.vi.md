@@ -9,7 +9,7 @@ pre: " <b> 2. </b> "
 
 # Batch-based Clickstream Analytics Platform
 
-### 1. Tóm tắt điều hành
+### 1. Tóm tắt
 
 Dự án này nhằm **thiết kế và triển khai Batch-based Clickstream Analytics Platform** cho một website thương mại điện tử chuyên về **máy tính và phụ kiện** (giao diện frontend của website được tích hợp một **JavaScript SDK** nhẹ để gửi dữ liệu hoạt động của người dùng như **clicks**, **views**, **searches** tới **backend API**) bằng cách sử dụng **AWS Cloud Services**.
 Hệ thống thu thập dữ liệu tương tác của người dùng (như **clicks**, **searches**, và **page visits**) từ website và lưu trữ chúng trong **Amazon S3** dưới dạng **raw logs**. Cứ mỗi giờ, **Amazon EventBridge** sẽ kích hoạt **AWS Lambda** để xử lý và chuyển đổi dữ liệu trước khi nạp vào **data warehouse** được lưu trữ trên **Amazon EC2**.
@@ -18,9 +18,9 @@ Dữ liệu đã được xử lý sẽ được visualize thông qua **R Shiny 
 
 Kiến trúc này tập trung vào **batch analytics**, **ETL pipeline**, và **business intelligence**, đồng thời đảm bảo **bảo mật (security)**, **khả năng mở rộng (scalability)**, và **hiệu quả chi phí (cost efficiency)** thông qua việc tận dụng các **AWS managed services**.
 
-### 2. Tuyên bố vấn đề
+### 2. Vấn đề đặt ra
 
-#### Vấn đề hiện tài là gì?
+#### Vấn đề hiện tại là gì?
 
 Các website E-commerce tạo ra một lượng lớn **clickstream data** — bao gồm product views, cart actions, và search activities — chứa đựng nhiều business insights có giá trị.
 

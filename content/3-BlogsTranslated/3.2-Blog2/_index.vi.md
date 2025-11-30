@@ -56,3 +56,11 @@ Bạn có thể bắt đầu sử dụng các tính năng mới này thông qua 
 Đối với các developer cần phạm vi dịch vụ rộng hơn hoặc các khả năng nâng cao, LocalStack cung cấp thêm các tier với nhiều tính năng mở rộng. Không có chi phí bổ sung từ AWS khi sử dụng integration này.
 
 Những cải tiến này đánh dấu một bước tiến quan trọng khác trong cam kết liên tục của chúng tôi nhằm đơn giản hóa trải nghiệm phát triển serverless. Trong năm qua, chúng tôi đã tập trung biến VS Code trở thành công cụ lựa chọn hàng đầu cho các serverless developer, và LocalStack integration tiếp tục hành trình đó bằng cách cung cấp các công cụ giúp developer xây dựng và kiểm thử ứng dụng serverless hiệu quả hơn bao giờ hết.
+
+
+
+
+![anh](/images/blog2.jpg)
+**Micah Walter**
+
+Micah Walter là Sr. Solutions Architect hỗ trợ khách hàng doanh nghiệp tại khu vực New York City và các vùng lân cận. Anh tư vấn cho các nhà điều hành, kỹ sư, và kiến trúc sư trong mọi giai đoạn trên hành trình lên cloud, với sự tập trung sâu vào sustainability và thiết kế thực tiễn. Trong thời gian rảnh, Micah yêu thích các hoạt động ngoài trời, nhiếp ảnh, và chơi đùa cùng các con trong nhà.

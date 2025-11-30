@@ -284,3 +284,9 @@ $ cdk destroy --all
 ## Kết luận
 
 Lifecycle hooks trong Amazon ECS cung cấp vô vàn khả năng để tùy chỉnh deployment pipeline của bạn. Trong bài viết này, chúng tôi đã đề cập đến một vài trường hợp sử dụng phổ biến của các hook này, chẳng hạn như đánh giá một deployment theo governance policies, cũng như thực hiện một bước manual approval. Để tìm hiểu thêm, hãy truy cập Amazon ECS lifecycle hooks [documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html) và xem các minh họa trên kênh Containers from the Couch trên [YouTube](https://www.youtube.com/ContainersFromTheCouch).
+
+
+
+
+![anh](/images/blog1.jpg) 
+**Olly Pomeroy** là Senior Container Specialist Solution Architect tại AWS.

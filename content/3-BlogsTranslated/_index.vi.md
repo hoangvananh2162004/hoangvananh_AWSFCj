@@ -16,3 +16,21 @@ Bài blog giới thiệu việc tích hợp LocalStack vào AWS Toolkit for VS C
 ### [Blog 3 - Xây dựng kiến trúc backup tập trung cross-Region với AWS Control Tower](3.3-Blog3/)
 
 Bài blog trình bày cách xây dựng kiến trúc sao lưu tập trung đa vùng (cross-Region) bằng cách tích hợp AWS Backup với AWS Control Tower. Theo đó, khi bật tích hợp này, Control Tower sẽ tự động tạo các vault sao lưu trung tâm tại mỗi vùng trong một tài khoản “central backup”, và vault bản địa trong từng tài khoản workload. Với chính sách sao lưu (backup policies), bạn có thể cấu hình sao lưu cục bộ hoặc sao chép chéo vùng, áp dụng nhất quán trên toàn tổ chức — từ đó giảm độ phức tạp vận hành, đảm bảo tuân thủ và tăng khả năng dự phòng dữ liệu.
+
+
+
+
+![anh](/images/blog3.1.jpg)
+**Chris Falk**
+
+Chris Falk là Principal Consultant trong đội ngũ AWS Professional Services. Anh đã làm việc với khách hàng trên nhiều ngành công nghiệp khác nhau, từ enterprise cloud migrations đến game tech và nhiều lĩnh vực khác. Trong thời gian rảnh, anh thích dành thời gian ngoài trời cùng gia đình và bạn bè ở vùng núi và trên mặt nước.
+
+![anh](/images/blog3.2.jpg)
+**Lei Shi**
+
+Lei Shi là Delivery Consultant tại AWS Professional Services, nơi anh biến những thách thức phức tạp trên cloud thành các giải pháp tinh gọn. Với niềm đam mê sâu sắc trong việc thiết kế và xây dựng cloud architecture, Lei làm việc cùng các khách hàng enterprise trong suốt hành trình cloud của họ. Anh cũng khám phá sự giao thoa thú vị giữa âm nhạc, phim ảnh và AI để tìm nguồn cảm hứng. Trên hết, anh trân trọng thời gian quý báu bên gia đình.
+
+![anh](/images/blog3.3.jpg)
+**Pujah Goviel**
+
+Pujah Goviel là Technical Account Manager tại Amazon Web Services (AWS). Cô làm việc với các khách hàng Enterprise Support để giải quyết những thách thức vận hành và giúp họ tăng tốc trên AWS Cloud. Trước khi gia nhập AWS, cô là một chuyên gia DevOps và đã đóng góp tích cực cho nhiều blog kỹ thuật trên trang blog cá nhân của mình tại medium.com/@pujah-goviel, cũng như phát triển nhiều Terraform modules trong Terraform registry.

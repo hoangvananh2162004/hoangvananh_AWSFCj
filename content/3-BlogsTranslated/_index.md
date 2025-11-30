@@ -16,3 +16,19 @@ The blog introduces the integration of LocalStack into AWS Toolkit for VS Code, 
 ### [Blog 3 - Build centralized cross-Region backup architecture with AWS Control Tower](3.3-Blog3/)
 
 The blog explains how to build a centralized cross-Region backup architecture by integrating AWS Backup with AWS Control Tower. When this integration is enabled, Control Tower automatically creates centralized backup vaults in each Region within a “central backup” account, along with local vaults in each workload account. Using backup policies, you can configure local or cross-Region backups and apply them consistently across the entire organization—reducing operational complexity, ensuring compliance, and enhancing data resiliency.
+
+
+![anh](/images/blog3.1.jpg)
+**Chris Falk**
+
+Chris Falk is a Principal Consultant with AWS Professional Services. He has worked with customers across multiple industries, from enterprise cloud migrations to game tech and many in between. In his free time, he enjoys spending time outdoors with family and friends in the mountains and on the water.
+
+![anh](/images/blog3.2.jpg)
+**Lei Shi**
+
+Lei Shi is a Delivery Consultant at AWS Professional Services, where he transforms complex cloud challenges into elegant solutions. With a deep passion for cloud architecture design and build, Lei works with enterprise customers through their cloud journeys. Lei explores the fascinating intersection of music, movies, and AI to find inspirations. Above all, he treasures quality time with his family.
+
+![anh](/images/blog3.3.jpg)
+**Pujah Goviel**
+
+Pujah Goviel is a Technical Account Manager at Amazon Web Services (AWS). She works with the Enterprise Support customers to solve their operational challenges and help them accelerate in the AWS Cloud. She was a DevOps specialist prior to joining AWS and actively contributed to various technical blogs in her own blog site medium.com/@pujah-goviel as well as developed various Terraform modules in the Terraform registry.

@@ -285,3 +285,10 @@ $ cdk destroy --all
 ## Conclusion
 
 Lifecycle hooks in Amazon ECS provide endless possibilities to customize your deployment pipeline. In this post we have covered a few common use cases for these hooks, such as evaluating a deployment against governance policies, as well as implementing a manual approval step. To learn more, go to the Amazon ECS lifecycle hooks [documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html), and watch demonstrations on the Containers from the Couch [YouTube](https://www.youtube.com/ContainersFromTheCouch) channel.
+
+
+
+
+
+![anh](/images/blog1.jpg) 
+**Olly Pomeroy** is a Senior Container Specialist Solution Architect at AWS.

@@ -140,3 +140,22 @@ By default, removing the AWS Backup integration does not delete your existing ba
 By integrating AWS Backup with AWS Control Tower, you can automate and standardize data protection across your entire enterprise without custom development. Organizations using AWS Control Tower can enable AWS Backup as a baseline landing zone service to automate backup vault creation and policy deployment across multiple accounts and AWS Regions, ensuring consistent data protection while reducing administrative overhead. The centralized management approach streamlines operations, while flexible policy options allow you to tailor protection strategies to your specific business needs. Most importantly, this solution enhances overall data resilience through built-in best practices. As your cloud environment scales, you can confidently maintain robust, consistent backup practices that align with well-architected principles.
 
 #### TAGS: [AWS Backup](https://aws.amazon.com/blogs/storage/tag/aws-backup/), [AWS Cloud Storage](https://aws.amazon.com/blogs/storage/tag/aws-cloud-storage/), [AWS Control Tower](https://aws.amazon.com/blogs/storage/tag/aws-control-tower/), [AWS Key Management Service (AWS KMS)](https://aws.amazon.com/blogs/storage/tag/aws-key-management-service-aws-kms/), [data resiliency](https://aws.amazon.com/blogs/storage/tag/data-resiliency/)
+
+
+
+
+
+![anh](/images/blog3.1.jpg)
+**Chris Falk**
+
+Chris Falk is a Principal Consultant with AWS Professional Services. He has worked with customers across multiple industries, from enterprise cloud migrations to game tech and many in between. In his free time, he enjoys spending time outdoors with family and friends in the mountains and on the water.
+
+![anh](/images/blog3.2.jpg)
+**Lei Shi**
+
+Lei Shi is a Delivery Consultant at AWS Professional Services, where he transforms complex cloud challenges into elegant solutions. With a deep passion for cloud architecture design and build, Lei works with enterprise customers through their cloud journeys. Lei explores the fascinating intersection of music, movies, and AI to find inspirations. Above all, he treasures quality time with his family.
+
+![anh](/images/blog3.3.jpg)
+**Pujah Goviel**
+
+Pujah Goviel is a Technical Account Manager at Amazon Web Services (AWS). She works with the Enterprise Support customers to solve their operational challenges and help them accelerate in the AWS Cloud. She was a DevOps specialist prior to joining AWS and actively contributed to various technical blogs in her own blog site medium.com/@pujah-goviel as well as developed various Terraform modules in the Terraform registry.

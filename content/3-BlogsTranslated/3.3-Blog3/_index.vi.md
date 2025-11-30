@@ -139,3 +139,22 @@ Theo mặc định, việc gỡ tích hợp AWS Backup sẽ không xóa các bac
 Bằng cách tích hợp AWS Backup với AWS Control Tower, bạn có thể tự động hóa và chuẩn hóa việc bảo vệ dữ liệu trên toàn bộ tổ chức mà không cần phát triển tùy chỉnh. Các tổ chức sử dụng AWS Control Tower có thể enable AWS Backup như một baseline landing zone service để tự động tạo backup vaults và triển khai policies trên nhiều accounts và AWS Regions, đảm bảo bảo vệ dữ liệu nhất quán trong khi giảm bớt khối lượng quản trị. Cách tiếp cận quản lý tập trung giúp tối ưu hóa hoạt động, trong khi các tùy chọn policies linh hoạt cho phép bạn tùy chỉnh chiến lược bảo vệ phù hợp với nhu cầu kinh doanh cụ thể. Quan trọng nhất, giải pháp này nâng cao khả năng resilience tổng thể của dữ liệu thông qua các best practices tích hợp sẵn. Khi môi trường cloud của bạn mở rộng, bạn có thể yên tâm duy trì các thực hành backup mạnh mẽ, nhất quán và phù hợp với các nguyên tắc well-architected.
 
 #### TAGS: [AWS Backup](https://aws.amazon.com/blogs/storage/tag/aws-backup/), [AWS Cloud Storage](https://aws.amazon.com/blogs/storage/tag/aws-cloud-storage/), [AWS Control Tower](https://aws.amazon.com/blogs/storage/tag/aws-control-tower/), [AWS Key Management Service (AWS KMS)](https://aws.amazon.com/blogs/storage/tag/aws-key-management-service-aws-kms/), [data resiliency](https://aws.amazon.com/blogs/storage/tag/data-resiliency/)
+
+
+
+
+
+![anh](/images/blog3.1.jpg)
+**Chris Falk**
+
+Chris Falk là Principal Consultant trong đội ngũ AWS Professional Services. Anh đã làm việc với khách hàng trên nhiều ngành công nghiệp khác nhau, từ enterprise cloud migrations đến game tech và nhiều lĩnh vực khác. Trong thời gian rảnh, anh thích dành thời gian ngoài trời cùng gia đình và bạn bè ở vùng núi và trên mặt nước.
+
+![anh](/images/blog3.2.jpg)
+**Lei Shi**
+
+Lei Shi là Delivery Consultant tại AWS Professional Services, nơi anh biến những thách thức phức tạp trên cloud thành các giải pháp tinh gọn. Với niềm đam mê sâu sắc trong việc thiết kế và xây dựng cloud architecture, Lei làm việc cùng các khách hàng enterprise trong suốt hành trình cloud của họ. Anh cũng khám phá sự giao thoa thú vị giữa âm nhạc, phim ảnh và AI để tìm nguồn cảm hứng. Trên hết, anh trân trọng thời gian quý báu bên gia đình.
+
+![anh](/images/blog3.3.jpg)
+**Pujah Goviel**
+
+Pujah Goviel là Technical Account Manager tại Amazon Web Services (AWS). Cô làm việc với các khách hàng Enterprise Support để giải quyết những thách thức vận hành và giúp họ tăng tốc trên AWS Cloud. Trước khi gia nhập AWS, cô là một chuyên gia DevOps và đã đóng góp tích cực cho nhiều blog kỹ thuật trên trang blog cá nhân của mình tại medium.com/@pujah-goviel, cũng như phát triển nhiều Terraform modules trong Terraform registry.

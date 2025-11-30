@@ -1,17 +1,21 @@
 ---
-title: "Event 2"
+title: "Event 3"
 weight: 1
 chapter: false
-pre: " <b> 4.2. </b> "
+pre: " <b> 4.3. </b> "
 ---
 
-# Summary Report: “​AI/ML/GenAI on AWS”
+# Summary Report: “​DevOps on AWS”
 
 ### Event Objectives
 
-- Welcome & Introduction.
-- AWS AI/ML Services Overview.
-- Generative AI with Amazon Bedrock.
+- Welcome & DevOps Mindset.
+- AWS DevOps Services – CI/CD Pipeline.
+- Infrastructure as Code (IaC).
+- Container Services on AWS.
+- Monitoring & Observability.
+- DevOps Best Practices & Case Studies.
+- Q&A & Wrap-up.
 
 ### Speakers
 

@@ -56,8 +56,6 @@ This session highlights how AI agents can act as intelligent partners, autonomou
 
 #### Some event photos
 
-> Overall, the event not only provided technical knowledge but also helped me reshape my thinking about application design, system modernization, and cross-team collaboration.
-
 ![anh](/images/e1.jpg)
 ![anh](/images/e2.jpg)
 ![anh](/images/e3.jpg)

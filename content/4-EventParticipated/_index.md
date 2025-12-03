@@ -29,7 +29,7 @@ pre: " <b> 4. </b> "
 
 ### [Event 2](4.2-Event2/)
 
-&emsp;**Event Name:** AWS Cloud Mastery Series #1.
+&emsp;**Event Name:** AWS Cloud Mastery Series #3.
 
 &emsp;**Date & Time:** 8:30 AM – 12:00 PM, Saturday, November 15, 2025
 

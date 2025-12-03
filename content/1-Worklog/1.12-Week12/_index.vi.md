@@ -5,50 +5,41 @@ chapter: false
 pre: " <b> 1.12 </b> "
 ---
 
-### Mục tiêu tuần 12:
+### Mục tiêu tuần 12: Hoàn thiện Proposal, Kiểm thử Pipeline
 
-- Kết nối, làm quen với các thành viên trong First Cloud Journey.
-- Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+#### Nội dung làm việc
 
-### Các công việc cần triển khai trong tuần này:
+- Check và hoàn chỉnh toàn bộ Proposal dự án:
+  - Check lại mục tiêu – phạm vi – kiến trúc – chi phí.
+  - Tối ưu phần mô tả luồng dữ liệu và logic sessionization.
+  - Chính sửa proposal để chuẩn bị nộp chính thức.
+- Kiểm thử pipeline ở mức logical (chưa triển khai thực tế):
 
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP <br>                    | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+  - Kiểm thử các trường hợp tạo session:
+  - Người dùng tương tác liên tục.
+  - Người dùng idle 30 phút.
+  - Người dùng trở lại sau timeout.
+  - Nhiều user, nhiều session song song.
 
-### Kết quả đạt được tuần 12:
+- Kiểm thử luồng dữ liệu từ raw, processed, sessionized.
+- Phân tích rủi ro & cách khắc phục:
 
-- Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản:
+  - Kẹt dữ liệu ở streaming layer.
+  - Lambda timeout khi ingest quá lớn.
+  - Tăng chi phí S3 khi lưu raw quá nhiều.
 
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
+- Chuẩn bị tài liệu bàn giao và slide trình bày:
+- Tạo slide kiến trúc.
+- Tạo bảng chi phí ước tính cuối.
+- Viết phần kết luận & đề xuất mở rộng.
 
-- Đã tạo và cấu hình AWS Free Tier account thành công.
+#### Kết quả
 
-- Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-- Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-
-  - Access Key
-  - Secret Key
-  - Region mặc định
-  - ...
-
-- Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  - Kiểm tra thông tin tài khoản & cấu hình
-  - Lấy danh sách region
-  - Xem dịch vụ EC2
-  - Tạo và quản lý key pair
-  - Kiểm tra thông tin dịch vụ đang chạy
-  - ...
-
-- Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-- ...
+- Proposal 100% hoàn chỉnh, sẵn sàng nộp chính thức.
+- Pipeline logic được kiểm thử với nhiều tình huống, đảm bảo tính hợp lý.
+- Tạo được bộ tài liệu đầy đủ để trình bày:
+  - Slide kiến trúc
+  - Mô tả sessionization logic
+  - Bảng chi phí
+  - Mô hình phân tầng dữ liệu
+  - Hoàn thiện Risk Assessment và phương án dự phòng (backup plan).

@@ -5,122 +5,89 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Bài thu hoạch “​Theo AWS Well-Architected Security Pillar”
 
 ### Mục Đích Của Sự Kiện
 
-- Chia sẻ best practices trong thiết kế ứng dụng hiện đại
-- Giới thiệu phương pháp DDD và event-driven architecture
-- Hướng dẫn lựa chọn compute services phù hợp
-- Giới thiệu công cụ AI hỗ trợ development lifecycle
+- Welcome & Introduction.
+- AWS AI/ML Services Overview.
+- Generative AI with Amazon Bedrock.
 
 ### Danh Sách Diễn Giả
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+- **Le Vu Xuan An** – AWS Cloud Club Captain, HCMUTE, First Cloud AI Journey
+- **Tran Duc Anh** – AWS Cloud Club Captain, SGU, First Cloud AI Journey
+- **Tran Doan Cong Ly** – AWS Cloud Club Captain, PITT, First Cloud AI Journey
+- **Danh Hoang Huu Nghi** – AWS Cloud Club Captain, HUFLIT, First Cloud AI Journey
 
-### Nội Dung Nổi Bật
+### Tầm nhìn của Cloud Club
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+### Mục tiêu của Cloud Club
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+AWS Cloud Club hướng đến việc hỗ trợ sinh viên:
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+- Khám phá và phát triển kỹ năng điện toán đám mây
+- Xây dựng năng lực lãnh đạo kỹ thuật
+- Kết nối cộng đồng ở quy mô toàn cầu
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+### Cloud Club hỗ trợ sinh viên qua:
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+- Hoạt động trải nghiệm thực tế với AWS
+- Mentorship từ các chuyên gia AWS
+- Quyền lợi độc quyền cho thành viên
+- Hỗ trợ lộ trình nghề nghiệp dài hạn
 
-#### Domain-Driven Design (DDD)
+---
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+## Lộ trình Huy hiệu Captain
 
-#### Event-Driven Architecture
+AWS Cloud Club cung cấp một lộ trình thăng cấp dành cho Captain:
 
-- **3 patterns tích hợp**: Publish/Subscribe, Point-to-point, Streaming
-- **Lợi ích**: Loose coupling, scalability, resilience
-- **So sánh sync vs async**: Hiểu rõ trade-offs (sự đánh đổi)
+### Các cấp độ Captain
 
-#### Compute Evolution
+- **Bronze**
+- **Silver**
+- **Gold**
+- **Platinum**
+- **Diamond**
 
-- **Shared Responsibility Model**: Từ EC2 → ECS → Fargate → Lambda
-- **Serverless benefits**: No server management, auto-scaling, pay-for-value
-- **Functions vs Containers**: Criteria lựa chọn phù hợp
+### Quyền lợi theo lộ trình
 
-#### Amazon Q Developer
+- Voucher thi chứng chỉ AWS
+- AWS Credits trị giá $200
+- License học tập QA
+- Điểm đổi swag và bộ swag dành cho Core Team
+- Được pre-approval cho Student Community Day
+- Có thể chuyển giao vai trò Captain cho thế hệ tiếp theo
 
-- **SDLC automation**: Từ planning đến maintenance
-- **Code transformation**: Java upgrade, .NET modernization
-- **AWS Transform agents**: VMware, Mainframe, .NET migration
+---
 
-### Những Gì Học Được
+## Dịch vụ Identity & Access Management (IAM)
 
-#### Tư Duy Thiết Kế
+IAM là dịch vụ quan trọng của AWS để quản lý quyền truy cập an toàn.
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+### IAM chịu trách nhiệm về:
 
-#### Kiến Trúc Kỹ Thuật
+- Kiểm soát truy cập bảo mật
+- Quản lý **users**, **groups**, **roles**, **permissions**
+- Đảm bảo **authentication** và **authorization**
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+### Ví dụ về nhóm IAM
 
-#### Chiến Lược Hiện Đại Hóa
+- **Developers** – ví dụ: Susan
+- **Security** – ví dụ: Dave
+- **Admins** – ví dụ: Bob
 
-- **Phased approach**: Không rush, phải có roadmap rõ ràng
-- **7Rs framework**: Nhiều con đường khác nhau tùy thuộc vào đặc điểm của mỗi ứng dụng
-- **ROI measurement**: Cost reduction + business agility
+Mỗi nhóm có mức độ quyền hạn khác nhau.
 
-### Ứng Dụng Vào Công Việc
+---
 
-- **Áp dụng DDD** cho project hiện tại: Event storming sessions với business team
-- **Refactor microservices**: Sử dụng bounded contexts để identify service boundaries
-- **Implement event-driven patterns**: Thay thế một số sync calls bằng async messaging
-- **Serverless adoption**: Pilot AWS Lambda cho một số use cases phù hợp
-- **Try Amazon Q Developer**: Integrate vào development workflow để boost productivity
+## Best Practices với IAM
 
-### Trải nghiệm trong event
+Để vận hành hệ thống AWS an toàn, nên tuân thủ:
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
-
-#### Học hỏi từ các diễn giả có chuyên môn cao
-
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
-
-#### Trải nghiệm kỹ thuật thực tế
-
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
-
-#### Ứng dụng công cụ hiện đại
-
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
-
-#### Kết nối và trao đổi
-
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
-
-#### Bài học rút ra
-
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
-
-#### Một số hình ảnh khi tham gia sự kiện
-
-- Thêm các hình ảnh của các bạn tại đây
-  > Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+- Nguyên tắc **Least Privilege**
+- Xóa **root access keys** ngay sau khi tạo
+- Sử dụng IAM Users/Roles thay cho tài khoản root
+- Tránh sử dụng ký tự `"*"` trong Action/Resource
+- Đăng nhập và quản trị bằng `aws login` đúng chuẩn

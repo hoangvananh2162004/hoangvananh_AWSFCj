@@ -37,8 +37,6 @@ AWS Cloud Club hướng đến việc hỗ trợ sinh viên:
 - Quyền lợi độc quyền cho thành viên
 - Hỗ trợ lộ trình nghề nghiệp dài hạn
 
----
-
 ## Lộ trình Huy hiệu Captain
 
 AWS Cloud Club cung cấp một lộ trình thăng cấp dành cho Captain:
@@ -60,8 +58,6 @@ AWS Cloud Club cung cấp một lộ trình thăng cấp dành cho Captain:
 - Được pre-approval cho Student Community Day
 - Có thể chuyển giao vai trò Captain cho thế hệ tiếp theo
 
----
-
 ## Dịch vụ Identity & Access Management (IAM)
 
 IAM là dịch vụ quan trọng của AWS để quản lý quyền truy cập an toàn.
@@ -79,8 +75,6 @@ IAM là dịch vụ quan trọng của AWS để quản lý quyền truy cập a
 - **Admins** – ví dụ: Bob
 
 Mỗi nhóm có mức độ quyền hạn khác nhau.
-
----
 
 ## Best Practices với IAM
 

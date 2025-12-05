@@ -68,7 +68,7 @@ Phiên này nhấn mạnh vai trò của AI Agents như những “trợ lý th�
 
 ---
 
-## Một số hình ảnh sự kiện
+#### Một số hình ảnh sự kiện
 
 ![anh](/images/e1.jpg)
 ![anh](/images/e2.jpg)

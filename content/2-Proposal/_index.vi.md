@@ -303,7 +303,7 @@ Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.p
     - S3 Standard: 0.17 USD/tháng (6 GB, 1,000 PUT requests, 1,000 GET requests, 6 GB Data returned, 6 GB Data scanned)
     - Data Transfer: 0.00 USD/tháng (Outbound 6 TB, Inbound 6 TB)
 
-  - **Amazon CloudFront (United States)**: 0.64 USD/tháng(6 GB Data transfer out to internet, 6 GB Data transfer out to origin, 10,000 HTTPS requests)
+  - **Amazon CloudFront (Asia Pacific)**: 1.08 USD/tháng(6 GB Data transfer out to internet, 6 GB Data transfer out to origin, 10,000 HTTPS requests)
 
   - **Amazon API Gateway (HTTP APIs)**: 0.01 USD/tháng(10,000 HTTP API requests units)
 
@@ -311,13 +311,14 @@ Hoặc tải [tệp ước tính ngân sách](../attachments/budget_estimation.p
 
   - **Amazon CloudWatch (APIs)**: 0.03 USD/tháng(100 metrics GetMetricData, 1,000 metrics GetMetricWidgetImage, 1,000 API requests)
 
-  - **Amazon SNS (Service settings)**: 0.02 USD/tháng(1,000,000 requests, 100,000 HTTP/HTTPS Notifications, 1,000 EMAIL/EMAIL-JSON Notifications, 100,000,000 QS Notifications, 100,000,000 Lambda deliveries, 100,000 Kinesis Data Firehose notifications)
+  - **Amazon SNS (Service settings)**: 0.03 USD/tháng(1,000,000 requests, 100,000 HTTP/HTTPS Notifications, 1,000 EMAIL/EMAIL-JSON Notifications, 100,000,000 QS Notifications, 100,000,000 Lambda deliveries, 100,000 Kinesis Data Firehose notifications)
 
-  - **Amazon EC2 (EC2 specifications)**: 1.68 USD/tháng(1 instance, 730 Compute Savings Plans)
+  - **Amazon EC2 (EC2 specifications)**: 9.42 USD/tháng(1 instance t3.small)
 
   - **Amazon EventBridge**: 0.00 USD/tháng(1,000,000 events (AWS management events - EventBridge Event Bus Ingestion))
+  - **Amazon Amplify**: 0.20 USD/tháng(Web App Hosting)
 
-Tổng cộng: 2.65 USD/tháng, 31.8 USD/12 tháng
+Tổng cộng: 11.05 USD/tháng, 132.60 USD/12 tháng
 
 ### 7. Đánh giá rủi ro
 

@@ -31,7 +31,7 @@ pre: " <b> 4. </b> "
 
 &emsp;**Event Name:** AWS Cloud Mastery Series #3.
 
-&emsp;**Date & Time:** 8:30 AM – 12:00 PM, Saturday, November 15, 2025
+&emsp;**Date & Time:** 8:30 AM – 12:00 PM, Saturday, November 29, 2025
 
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City
 

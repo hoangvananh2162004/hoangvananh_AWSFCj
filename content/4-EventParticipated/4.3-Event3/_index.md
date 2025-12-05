@@ -79,3 +79,14 @@ pre: " <b> 4.3. </b> "
 
 - Fast deployment for web apps and APIs without server management.
 - Supports deploying from GitHub or ECR.
+
+#### Some event photos
+
+![anh](/images/su1.jpg)
+![anh](/images/su2.jpg)
+![anh](/images/su3.jpg)
+![anh](/images/su4.jpg)
+![anh](/images/su5.jpg)
+![anh](/images/su6.jpg)
+![anh](/images/su7.jpg)
+![anh](/images/su8.jpg)

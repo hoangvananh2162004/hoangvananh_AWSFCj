@@ -76,7 +76,7 @@ IAM là dịch vụ quan trọng của AWS để quản lý quyền truy cập a
 
 Mỗi nhóm có mức độ quyền hạn khác nhau.
 
-## Best Practices với IAM
+### Best Practices với IAM
 
 Để vận hành hệ thống AWS an toàn, nên tuân thủ:
 
@@ -85,3 +85,11 @@ Mỗi nhóm có mức độ quyền hạn khác nhau.
 - Sử dụng IAM Users/Roles thay cho tài khoản root
 - Tránh sử dụng ký tự `"*"` trong Action/Resource
 - Đăng nhập và quản trị bằng `aws login` đúng chuẩn
+
+### Một số hình ảnh sự kiện
+
+![anh](/images/3.jpg)
+![anh](/images/3.1.jpg)
+![anh](/images/3.2.jpg)
+![anh](/images/3.4.jpg)
+![anh](/images/3.5.jpg)

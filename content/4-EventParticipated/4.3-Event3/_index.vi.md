@@ -5,7 +5,7 @@ chapter: false
 pre: " <b> 4.3. </b> "
 ---
 
-# Bài thu hoạch “GenAI-powered App-DB Modernization workshop”
+# Bài thu hoạch “​DevOps on AWS”
 
 ### Mục Đích Của Sự Kiện
 

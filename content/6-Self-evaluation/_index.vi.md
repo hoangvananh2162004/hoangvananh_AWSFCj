@@ -5,8 +5,8 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Trong thời gian thực tập tại **[Tên công ty/tổ chức]** từ **[ngày bắt đầu]** đến **[ngày kết thúc]**, tôi đã có cơ hội tiếp xúc với môi trường làm việc thực tế và áp dụng những gì đã học vào công việc hằng ngày.  
-Tôi được tham gia vào **[mô tả ngắn gọn dự án hoặc công việc chính]**, qua đó giúp tôi hiểu rõ hơn quy trình làm việc và cải thiện các kỹ năng như **[liệt kê kỹ năng: lập trình, phân tích, giao tiếp, viết báo cáo…]**.
+Trong thời gian thực tập tại **AWS First Cloud Journey** từ **08/08/2025** đến **09/12/2025**, tôi đã có cơ hội tiếp xúc với môi trường làm việc thực tế và áp dụng những gì đã học vào công việc hằng ngày.  
+Tôi có cơ hôi được tham gia môi trường năng động, cùng với nhóm của mình đã học tập và thực hiện dự án nhóm với nhau. Có cơ hội được học và tiếp cận đến AWS được học và tìm hiểu các dịch vụ nền tảng cloud, được thực hành và làm việc với cloud hiểu rõ tàm quan trong của các dịch vụ, qua đó giúp tôi hiểu rõ hơn quy trình làm việc và cải thiện các kỹ năng như **[liệt kê kỹ năng: lập trình, phân tích, giao tiếp, viết báo cáo…]**.
 
 Trong suốt quá trình thực tập, tôi cố gắng hoàn thành tốt nhiệm vụ được giao, giữ thái độ nghiêm túc và chủ động trao đổi với anh/chị trong team để làm việc hiệu quả hơn.
 
@@ -14,11 +14,11 @@ Dưới đây là phần tự đánh giá của tôi:
 
 | STT | Tiêu chí                            | Mô tả                                                                | Tốt | Khá | Trung bình |
 | --- | ----------------------------------- | -------------------------------------------------------------------- | --- | --- | ---------- |
-| 1   | **Kiến thức và kỹ năng chuyên môn** | Khả năng nắm bắt công việc, áp dụng kiến thức và chất lượng sản phẩm | ✅  | ☐   | ☐          |
+| 1   | **Kiến thức và kỹ năng chuyên môn** | Khả năng nắm bắt công việc, áp dụng kiến thức và chất lượng sản phẩm | ☐   | ✅  | ☐          |
 | 2   | **Khả năng học hỏi**                | Tốc độ tiếp thu cái mới và khả năng thích nghi                       | ☐   | ✅  | ☐          |
 | 3   | **Chủ động**                        | Tự tìm hiểu, tự nhận việc và không phụ thuộc quá nhiều vào hướng dẫn | ✅  | ☐   | ☐          |
 | 4   | **Tinh thần trách nhiệm**           | Ý thức hoàn thành nhiệm vụ và đảm bảo tiến độ                        | ✅  | ☐   | ☐          |
-| 5   | **Kỷ luật**                         | Tuân thủ nội quy, thời gian làm việc                                 | ☐   | ☐   | ✅         |
+| 5   | **Kỷ luật**                         | Tuân thủ nội quy, thời gian làm việc                                 | ☐   | ✅  | ☐          |
 | 6   | **Tính cầu tiến**                   | Sẵn sàng lắng nghe góp ý và cải thiện                                | ☐   | ✅  | ☐          |
 | 7   | **Giao tiếp**                       | Trình bày công việc, trao đổi với đồng nghiệp                        | ☐   | ✅  | ☐          |
 | 8   | **Hợp tác nhóm**                    | Làm việc cùng team, hỗ trợ và phối hợp                               | ✅  | ☐   | ☐          |

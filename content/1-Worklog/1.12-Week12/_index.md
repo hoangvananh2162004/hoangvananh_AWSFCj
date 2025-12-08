@@ -5,50 +5,46 @@ chapter: false
 pre: " <b> 1.12. </b> "
 ---
 
-### Week 12 Objectives:
+### Week 12 Objective: Finalize Proposal, Test the Pipeline
 
-- Connect and get acquainted with members of First Cloud Journey.
-- Understand basic AWS services, how to use the console & CLI.
+#### Work activities
 
-### Tasks to be carried out this week:
+- Reviewed and finalized the entire project proposal:
 
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2025 | 08/11/2025      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2025 | 08/13/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP <br>                              | 08/14/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2025 | 08/15/2025      | <https://cloudjourney.awsstudygroup.com/> |
+  - Rechecked objectives – scope – architecture – cost.
+  - Optimized the description of the data flow and sessionization logic.
+  - Refined the proposal for official submission.
 
-### Week 12 Achievements:
+- Tested the pipeline at a logical level (no real deployment yet):
 
-- Understood what AWS is and mastered the basic service groups:
+  - Tested session creation scenarios:
+  - User interacts continuously.
+  - User stays idle for 30 minutes.
+  - User returns after timeout.
+  - Multiple users with multiple concurrent sessions.
 
-  - Compute
-  - Storage
-  - Networking
-  - Database
-  - ...
+- Tested data flow through raw, processed, and sessionized layers.
 
-- Successfully created and configured an AWS Free Tier account.
+- Analyzed risks & mitigation strategies:
 
-- Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+  - Data stuck at the streaming layer.
+  - Lambda timeout under high ingest volume.
+  - Increased S3 cost when storing too much raw data.
 
-- Installed and configured AWS CLI on the computer, including:
+- Prepared handover documentation and presentation slides:
+  - Created architecture slides.
+  - Created the final estimated cost table.
+  - Wrote conclusion and proposed expansions.
 
-  - Access Key
-  - Secret Key
-  - Default Region
-  - ...
+#### Results
 
-- Used AWS CLI to perform basic operations such as:
+- Proposal is 100% completed and ready for official submission.
+- Pipeline logic has been tested with multiple scenarios, ensuring its correctness.
+- A full documentation package has been created for presentation:
+  - Architecture slides
+  - Sessionization logic description
+  - Cost estimation table
+  - Data layer model
+  - Completed Risk Assessment and backup plan.
 
-  - Check account & configuration information
-  - Retrieve the list of regions
-  - View EC2 service
-  - Create and manage key pairs
-  - Check information about running services
-  - ...
-
-- Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-- ...
+Link sheet report team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)

@@ -13,11 +13,11 @@ pre: " <b> 1.7. </b> "
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Thứ | Công việc                              | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | -------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 1   | - Khái niệm cơ sở dữ liệu              | 25/10/2025   | 25/10/2025      |
-| 2   | - Amazon RDS & Amazon Aurora           | 25/10/2025   | 26/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Amazon ElastiCache & Amazon RedShift | 29/10/2025   | 29/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Thứ | Công việc                              | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                                                                                |
+| --- | -------------------------------------- | ------------ | --------------- | --------------------------------------------------------------------------------------------- |
+| 1   | - Khái niệm cơ sở dữ liệu              | 25/10/2025   | 25/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 2   | - Amazon RDS & Amazon Aurora           | 25/10/2025   | 26/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 3   | - Amazon ElastiCache & Amazon RedShift | 29/10/2025   | 29/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
 
 ### Kết quả đạt được tuần 7:
 

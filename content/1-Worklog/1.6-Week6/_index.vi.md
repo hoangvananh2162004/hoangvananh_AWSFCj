@@ -12,11 +12,11 @@ pre: " <b> 1.6. </b> "
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Thứ | Công việc                                             | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ----------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| Thứ | Công việc                                             | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                                                                                |
+| --- | ----------------------------------------------------- | ------------ | --------------- | --------------------------------------------------------------------------------------------- |
 | 1   | - Amazon Cognito - AWS Organization                   | 05/10/2025   | 05/10/2025      |
-| 2   | - AWS Identity Center - Amazon Key Management Service | 05/10/2025   | 05/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - AWS Security Hub                                    | 06/10/2025   | 06/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - AWS Identity Center - Amazon Key Management Service | 05/10/2025   | 05/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 3   | - AWS Security Hub                                    | 06/10/2025   | 06/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
 
 ### Kết quả đạt được tuần 6:
 

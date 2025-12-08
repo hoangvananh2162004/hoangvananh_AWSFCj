@@ -13,16 +13,16 @@ pre: " <b> 1.4. </b> "
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                                  | Start Date | Completion Date | Reference Material                        |
-| --- | --------------------------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
+| Day | Task                                                                  | Start Date | Completion Date | Reference Material                                                                            |
+| --- | --------------------------------------------------------------------- | ---------- | --------------- | --------------------------------------------------------------------------------------------- |
 | 1   | - Amazon Elastic Compute Cloud ( EC2 ) - Instance type AWS.           | 29/09/2025 | 29/09/2025      |
-| 2   | - Amazon Elastic Compute Cloud ( EC2 ) - AMI / Backup / Key Pair EC2. | 30/09/2025 | 30/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Amazon Elastic Compute Cloud ( EC2 ) - Elastic block store.         | 30/09/2025 | 30/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Amazon Elastic Compute Cloud ( EC2 ) - Instance store               | 30/09/2025 | 30/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Amazon Elastic Compute Cloud ( EC2 ) - User data                    | 30/09/2025 | 30/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - Amazon Elastic Compute Cloud ( EC2 ) - Meta data                    | 30/09/2025 | 30/09/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 7   | - Amazon Elastic Compute Cloud ( EC2 ) - EC2 auto scaling             | 1/10/2025  | 1/10/2025       | <https://cloudjourney.awsstudygroup.com/> |
-| 8   | - EC2 Autoscaling - EFS/FSx - Lightsail - MGN                         | 1/10/2025  | 1/10/2025       | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Amazon Elastic Compute Cloud ( EC2 ) - AMI / Backup / Key Pair EC2. | 30/09/2025 | 30/09/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 3   | - Amazon Elastic Compute Cloud ( EC2 ) - Elastic block store.         | 30/09/2025 | 30/09/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 4   | - Amazon Elastic Compute Cloud ( EC2 ) - Instance store               | 30/09/2025 | 30/09/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 5   | - Amazon Elastic Compute Cloud ( EC2 ) - User data                    | 30/09/2025 | 30/09/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 6   | - Amazon Elastic Compute Cloud ( EC2 ) - Meta data                    | 30/09/2025 | 30/09/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 7   | - Amazon Elastic Compute Cloud ( EC2 ) - EC2 auto scaling             | 1/10/2025  | 1/10/2025       | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 8   | - EC2 Autoscaling - EFS/FSx - Lightsail - MGN                         | 1/10/2025  | 1/10/2025       | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
 
 ### Week 4 Achievements:
 

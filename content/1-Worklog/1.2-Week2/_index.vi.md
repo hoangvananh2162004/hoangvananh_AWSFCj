@@ -13,13 +13,13 @@ pre: " <b> 1.2. </b> "
 
 ### Các công việc cần triển khai trong tuần này:
 
-| Thứ | Công việc                                         | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
+| Thứ | Công việc                                         | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                                                                                |
+| --- | ------------------------------------------------- | ------------ | --------------- | --------------------------------------------------------------------------------------------- |
 | 1   | - Tìm hiểu khái niệm VPC, VPN tập                 | 11/08/2025   | 11/08/2025      |
-| 2   | - Thực hành: Sử dụng dịch vụ của AWS với VPC, VPN | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Tạo **Subnets**, **Internet Gateway**           | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo **Route Table**, **security groups**        | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tạo **Route Table**, **Security groups**        | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Thực hành: Sử dụng dịch vụ của AWS với VPC, VPN | 12/08/2025   | 12/08/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 3   | - Tạo **Subnets**, **Internet Gateway**           | 13/08/2025   | 13/08/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 4   | - Tạo **Route Table**, **security groups**        | 13/08/2025   | 13/08/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 5   | - Tạo **Route Table**, **Security groups**        | 13/08/2025   | 13/08/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
 
 ### Kết quả đạt được tuần 2:
 

@@ -13,13 +13,13 @@ pre: " <b> 1.2. </b> "
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                          | Start Date | Completion Date | Reference Material                        |
-| --- | --------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
+| Day | Task                                          | Start Date | Completion Date | Reference Material                                                                            |
+| --- | --------------------------------------------- | ---------- | --------------- | --------------------------------------------------------------------------------------------- |
 | 1   | - Learn the concepts of VPC and VPN           | 08/11/2025 | 08/11/2025      |
-| 2   | - Practice: Use AWS services with VPC and VPN | 08/12/2025 | 08/12/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Create **Subnets**, **Internet Gateway**    | 13/08/2025 | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create Route **Table**, **security groups** | 13/08/2025 | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Create **Route Table**, **security groups** | 13/08/2025 | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Practice: Use AWS services with VPC and VPN | 08/12/2025 | 08/12/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 3   | - Create **Subnets**, **Internet Gateway**    | 13/08/2025 | 13/08/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 4   | - Create Route **Table**, **security groups** | 13/08/2025 | 13/08/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 5   | - Create **Route Table**, **security groups** | 13/08/2025 | 13/08/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
 
 ### Week 2 Achievements:
 

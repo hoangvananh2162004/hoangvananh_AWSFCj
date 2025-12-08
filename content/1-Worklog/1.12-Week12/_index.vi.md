@@ -43,3 +43,5 @@ pre: " <b> 1.12 </b> "
   - Bảng chi phí
   - Mô hình phân tầng dữ liệu
   - Hoàn thiện Risk Assessment và phương án dự phòng (backup plan).
+
+Link sheet báo cáo team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)

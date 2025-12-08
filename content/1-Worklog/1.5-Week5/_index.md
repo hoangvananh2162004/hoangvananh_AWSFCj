@@ -13,14 +13,14 @@ pre: " <b> 1.5. </b> "
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                  | Start Date | Completion Date | Reference Material                        |
-| --- | ----------------------------------------------------- | ---------- | --------------- | ----------------------------------------- |
+| Day | Task                                                  | Start Date | Completion Date | Reference Material                                                                            |
+| --- | ----------------------------------------------------- | ---------- | --------------- | --------------------------------------------------------------------------------------------- |
 | 1   | - Amazon Simple Storage Service (S3)                  | 2/010/2025 | 2/010/2025      |
-| 2   | - Amazon Simple Storage Service (S3) - Access Point   | 2/010/2025 | 2/010/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Amazon Simple Storage Service (S3) - Storage Class  | 2/010/2025 | 2/010/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - S3 Static Website & CORS                            | 3/010/2025 | 3/010/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Control Access - Object Key & Performance - Glacier | 3/010/2025 | 3/010/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - Snow Family - Storage Gateway - Backup              | 3/010/2025 | 4/010/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| 2   | - Amazon Simple Storage Service (S3) - Access Point   | 2/010/2025 | 2/010/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 3   | - Amazon Simple Storage Service (S3) - Storage Class  | 2/010/2025 | 2/010/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 4   | - S3 Static Website & CORS                            | 3/010/2025 | 3/010/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 5   | - Control Access - Object Key & Performance - Glacier | 3/010/2025 | 3/010/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 6   | - Snow Family - Storage Gateway - Backup              | 3/010/2025 | 4/010/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
 
 ### Week 5 Achievements:
 

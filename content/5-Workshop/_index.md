@@ -5,24 +5,43 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Clickstream Analytics Platform for E-Commerce
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+This workshop walks through a **Batch-based Clickstream Analytics Platform** for an e-commerce website that sells computer products.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+You will see how clickstream events:
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
+- Are captured by a **Next.js** frontend hosted on **AWS Amplify** and delivered through **Amazon CloudFront**.  
+- Are ingested via **Amazon API Gateway** and a **Lambda Ingest** function into a **Raw Clickstream bucket on Amazon S3**.  
+- Are processed in batch by a **VPC-enabled ETL Lambda** that reads from S3 through an **S3 Gateway VPC Endpoint** and loads curated data into a **PostgreSQL Data Warehouse** on **EC2** in a private subnet.  
+- Are visualized via **R Shiny dashboards** running on the same EC2 instance as the Data Warehouse.
 
-- **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-- **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+The workshop emphasises:
 
-#### Content
+- **Separation of OLTP and Analytics** workloads.  
+- A fully **private analytics backend** (ETL Lambda, Data Warehouse, Shiny) with no public IPs.  
+- **Cost‑efficient private access to S3** using a Gateway VPC Endpoint instead of a NAT Gateway.
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+#### Prerequisites
+
+Before starting the detailed sections (5.1–5.6), the reader is expected to have:
+
+- Basic familiarity with **AWS services** such as EC2, S3, Lambda, API Gateway, VPC, and IAM.  
+- Working knowledge of **SQL** and **PostgreSQL**.  
+- A general understanding of **web applications** (HTTP, JSON, REST APIs).  
+- An AWS account with sufficient permissions to create VPC endpoints, Lambda functions, EC2 instances, S3 buckets, and EventBridge rules.
+
+> This workshop assumes that the core infrastructure (VPC, subnets, EC2 instances, Lambda functions, API Gateway, and S3 buckets) is already provisioned, for example via Infrastructure‑as‑Code such as Terraform or CloudFormation.
+
+#### Content Map
+
+The workshop content is split into six sections:
+
+1. [Objectives & Scope](5.1-Objectives-&-Scope)
+2. [Architecture Walkthrough](5.2-Architecture-Walkthrough) 
+3. [Implementing Clickstream Ingestion](5.3-Implementing-Clickstream-Ingestion) 
+4. [Building the Private Analytics Layer](5.4-Building-the-Private-Analytics-Layer)  
+5. [Visualizing Analytics with Shiny Dashboards](5.5-Visualizing-Analytics-with-Shiny-Dashboards)
+6. [Summary & Clean up](5.6-Summary-&-Clean-up)

@@ -8,22 +8,22 @@ pre: " <b> 7. </b> "
 ### Đánh giá chung
 
 **1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+Môi trường làm việc của FCJ rất hoạt bát, niềm nở. Có 1 môi trường tốt cho việc gặp và giao tiếp cùng các bạn chung ngành, chung 1 mục tiêu. Dược hỏi từ các bạn tham gia FCJ và nhóm làm dự án. Không gian làm việc rộng rãi tự do cho việc học, mát mẻ và thoải mái. Môi trường không có gì đáng nói, về mặt chỗ ngồi thì nên linh hoạt cho các bạn ngồi để không bị khó trong việc đi lại.
 
 **2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Mentor rất nhiệt tình trong việc hỗ trợ các thành viên FCJ, luôn giải đáp mọi thắc mắc của các thành viên trong FCJ. Luôn bên cạnh giúp các thành viên hoàn thành dự án, và cũng như các mentor tổ chức các buổi event để chia sẻ kinh nghiêm cho các mentor. Về mentor luôn rất nhiệt tình giúp đỡ các hành viên FCJ.
 
 **3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+Công việc được tự do lựa chọn sao cho phù hợp với chuyên ngành mình học, ngoài công việc ra khi đucợ làm việc với nhóm đucợ học thêm những kiến thức khác ngoài chuyên ngành và nó sẽ hỗ trọ cho việc phát triển bản thân. Được cơ hội tiếp cận nển tảng cloud là 1 kiến thức rất tuyệt vời và quan trọng.
 
 **4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+Học hỏi thì với môi trường mà FCJ tạo ra giúp mình học hỏi thêm nhiều kiến thức được tiếp cần các dịch vụ cloud của AWS, như là với mình học AI thì có AWS sagemaker cho việc huấn luyện mô hình AI. và các dịch vụ nổi tiếng mà các công ty thế giới hay dùng như RDS, S3, VPC...., và các dịch vụ khác. Trong quá trình học hỏi thì cũng như mình chưa hiểu và thắc mắc trong quá trình thực hành thì các mentor luôn sẵn lòng chia sẻ và chỉ dẫn cho mình.
 
 **5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+Đối với văn hóa thì mọi người luôn tôn trọng nhau, nhưng vẫn có 1 số thì sẽ làm ảnh hưởng đến mọi người những cũng không lớn. thành viên FCJ luôn tốt không ai quá đáng với các thành viên khác. Nhóm làm dự án luôn hỗ trợ và nhiệt tình, luôn cố gắng làm việc nhóm và hoàn thành công việc. Văn hóa và nhóm thì cho các thành viên thực tập tại FCJ biết khi đi làm nó sẽ như nào mặc dù vẫn chưa được làm như chính thức.
 
 **6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
+Công ty có tạo điều khiện cho các thực tập sinh (thanh viên FCJ) có cơ hôi được tham gia các sự kiến lớn của công ty. Thời gian làm việc và đi lên công tuy linh hoạt phù hợp với từng bạn. Luôn được mời và tham gia các trường trình phát triển và chia sẻ kiến thức của môi trường công ty. Công ty tạo được điều kiện tốt cho các bạn mục dù đây là kì ojt để trai nghiệm môi trường doanh nghiệp.
 
 ### Một số câu hỏi khác
 

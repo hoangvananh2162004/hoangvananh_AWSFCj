@@ -19,3 +19,5 @@ pre: " <b> 1.8. </b> "
 - Xác định chính xác phạm vi: Dự án tập trung vào xây dựng pipeline xử lý và sessionize dữ liệu clickstream theo thời gian thực.
 - Chốt được mục tiêu: Khai thác dữ liệu người dùng theo phiên để phục vụ phân tích hành vi.
 - Thống nhất phương thức họp và quy tắc làm việc nhóm.
+
+Link sheet báo cáo team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)

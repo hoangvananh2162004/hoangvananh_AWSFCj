@@ -13,11 +13,11 @@ pre: " <b> 1.7. </b> "
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                   | Start Date | Completion Date | Reference Source                          |
-| --- | -------------------------------------- | ---------- | --------------- | ----------------------------------------- |
-| 1   | - Database Concepts                    | 25/10/2025 | 25/10/2025      |                                           |
-| 2   | - Amazon RDS & Amazon Aurora           | 25/10/2025 | 26/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 3   | - Amazon ElastiCache & Amazon RedShift | 29/10/2025 | 29/10/2025      | <https://cloudjourney.awsstudygroup.com/> |
+| Day | Task                                   | Start Date | Completion Date | Reference Source                                                                              |
+| --- | -------------------------------------- | ---------- | --------------- | --------------------------------------------------------------------------------------------- |
+| 1   | - Database Concepts                    | 25/10/2025 | 25/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 2   | - Amazon RDS & Amazon Aurora           | 25/10/2025 | 26/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 3   | - Amazon ElastiCache & Amazon RedShift | 29/10/2025 | 29/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
 
 ### Week 7 Achievements:
 

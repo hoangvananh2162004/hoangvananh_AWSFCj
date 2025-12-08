@@ -27,3 +27,5 @@ pre: " <b> 1.10. </b> "
 - Hoàn thành kiến trúc cuối.
 - Định nghĩa pipeline rõ ràng: ingestion → processing → session creation → storage → analytics.
 - Tạo cơ sở tài liệu đầy đủ để bước sang phase proposal & tính chi phí.
+
+Link sheet báo cáo team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)

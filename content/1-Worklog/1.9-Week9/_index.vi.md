@@ -25,4 +25,4 @@ pre: " <b> 1.9. </b> "
 - Xác định được kiến trúc tổng thể phù hợp với nhu cầu: ingest → transform → sessionization → lưu trữ → analyze.
 - Team thống nhất lựa chọn mô hình kiến trúc streaming-first.
 
-Link sheet báo cáo team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)
+Link sheet báo cáo team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing

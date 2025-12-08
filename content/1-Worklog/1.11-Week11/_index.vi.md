@@ -32,4 +32,4 @@ pre: " <b> 1.11. </b> "
 - Ước tính chi phí được xây dựng hợp lý dựa trên mô hình sử dụng.
 - Các phần tài liệu chuyến giao (deliverables) gần như hoàn chỉnh.
 
-Link sheet báo cáo team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)
+Link sheet báo cáo team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing

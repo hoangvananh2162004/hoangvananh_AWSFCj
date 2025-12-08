@@ -47,4 +47,4 @@ pre: " <b> 1.12. </b> "
   - Data layer model
   - Completed Risk Assessment and backup plan.
 
-Link sheet report team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)
+Link sheet report team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing

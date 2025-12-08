@@ -32,4 +32,4 @@ pre: " <b> 1.11. </b> "
 - Cost estimation is reasonably constructed based on the usage model.
 - Deliverables are almost fully completed.
 
-Link sheet report team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)
+Link sheet report team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing

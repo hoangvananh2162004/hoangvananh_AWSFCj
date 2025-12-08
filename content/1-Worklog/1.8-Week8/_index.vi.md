@@ -20,4 +20,4 @@ pre: " <b> 1.8. </b> "
 - Chốt được mục tiêu: Khai thác dữ liệu người dùng theo phiên để phục vụ phân tích hành vi.
 - Thống nhất phương thức họp và quy tắc làm việc nhóm.
 
-Link sheet báo cáo team(https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing)
+Link sheet báo cáo team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing

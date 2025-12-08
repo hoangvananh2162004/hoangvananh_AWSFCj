@@ -20,4 +20,4 @@ pre: " <b> 1.8. </b> "
 - Finalized the objective: Leveraging user session data to support behavior analysis.
 - Unified meeting methods and team working rules.
 
-Link sheet report team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing
+Link report sheet team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing

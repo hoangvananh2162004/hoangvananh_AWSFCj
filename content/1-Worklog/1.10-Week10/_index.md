@@ -28,4 +28,4 @@ pre: " <b> 1.10. </b> "
 - Clearly defined pipeline: ingestion → processing → session creation → storage → analytics.
 - Created complete documentation to move to the proposal phase and cost estimation.
 
-Link sheet report team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing
+Link report sheet team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing

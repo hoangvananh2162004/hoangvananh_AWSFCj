@@ -25,4 +25,4 @@ pre: " <b> 1.9. </b> "
 - Identified the overall architecture that fits the requirements: ingest → transform → sessionization → storage → analysis.
 - The team agreed to choose a streaming-first architecture model.
 
-Link sheet report team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing
+Link report sheet team https://docs.google.com/spreadsheets/d/1Pvmgz3RBpyuaOQCA2mRM7u0Ei3s6-L72XaAuXFXOPac/edit?usp=sharing

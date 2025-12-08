@@ -30,13 +30,18 @@ The company provides an internship allowance and offers flexible working hours w
 ### Additional Questions
 
 - What did you find **most satisfying** during your internship?
+  - During my internship, what I liked most was understanding what it’s like to work in real companies. Even though I didn’t get to work exactly like in a real job, it still gave me the feeling of having a fixed work schedule like an office environment.
 - What do you think the company **should improve** for future interns?
+  - What I think the company should improve is the working process. The training program has quite a large number of people, so it’s difficult to manage everyone. Some people are active while others are not. So it would be better to assign tasks to interns, so they really feel like they are learning through working. Besides doing personal projects, the assigned tasks should match their skill level and suit the project they are working on, helping them generate ideas.
 - If recommending to a friend, would you **suggest they intern here**? Why or why not?
+  - If I were to introduce it to my friends, I would encourage them to participate if they have the opportunity to try it. The environment may be crowded and it might be difficult to stay motivated or take initiative, but they will gain new knowledge and learn important things that are valuable across many industries, not only in technology.
 
 ---
 
 ### Suggestions & Expectations
 
 - Do you have any suggestions to improve the internship experience?
+  - Overall, there isn’t much that needs improvement—the program is already very good. The only thing needed is better management of FCJ members, and everything will be smooth.
 - Would you like to continue this program in the future?
-- Any other comments (free sharing):
+  - In the future, I will join again to have more opportunities to connect with others and find new opportunities for myself, helping me grow and improve my perspective and working mindset.
+- Any other comments (free sharing): I don’t have any additional comments.

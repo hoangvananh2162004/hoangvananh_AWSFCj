@@ -39,5 +39,5 @@ Công ty có tạo điều khiện cho các thực tập sinh (thanh viên FCJ) 
 - Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?
   - Về cải thiện thì sẽ không cần cải thiện gì nhiều cả về mặt tổng thể thì trương trình rất tốt rồi, chỉ cần kiểm soát được các thành viên FCJ là ổn áp hết.
 - Bạn có muốn tiếp tục chương trình này trong tương lai?
-  -Trong tương lại mình sẽ tham gia để có thêm cơ hôi giao lưu tìm thêm nhiều cơ hôi hơn cho bản thân để được phát triển cũng như cải thiện góc nhìn và tư duy làm việc.
+  - Trong tương lại mình sẽ tham gia để có thêm cơ hôi giao lưu tìm thêm nhiều cơ hôi hơn cho bản thân để được phát triển cũng như cải thiện góc nhìn và tư duy làm việc.
 - Góp ý khác (tự do chia sẻ): Về góp ý khác không có.

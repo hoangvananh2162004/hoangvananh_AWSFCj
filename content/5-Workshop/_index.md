@@ -2,46 +2,90 @@
 title: "Workshop"
 weight: 5
 chapter: false
-pre: " <b> 5. </b> "
+pre: "<b>5. </b>"
 ---
 
-# Clickstream Analytics Platform for E-Commerce
+# Batch-Based Clickstream Analytics Platform
+
+![Architecture](/images/architecture.png)
+<p align="center"><em>Figure: Architecture Batch-base Clickstream Analytics Platform.</em></p>
 
 #### Overview
 
-This workshop walks through a **Batch-based Clickstream Analytics Platform** for an e-commerce website that sells computer products.
+This workshop implements a **Batch-Based Clickstream Analytics Platform** for an e-commerce website selling computer products.
 
-You will see how clickstream events:
+The system collects clickstream events from the frontend, stores raw JSON data in **Amazon S3**, processes events via scheduled ETL (**AWS Lambda + EventBridge**), and loads analytical data into a dedicated **PostgreSQL Data Warehouse on EC2** inside a private subnet.
 
-- Are captured by a **Next.js** frontend hosted on **AWS Amplify** and delivered through **Amazon CloudFront**.  
-- Are ingested via **Amazon API Gateway** and a **Lambda Ingest** function into a **Raw Clickstream bucket on Amazon S3**.  
-- Are processed in batch by a **VPC-enabled ETL Lambda** that reads from S3 through an **S3 Gateway VPC Endpoint** and loads curated data into a **PostgreSQL Data Warehouse** on **EC2** in a private subnet.  
-- Are visualized via **R Shiny dashboards** running on the same EC2 instance as the Data Warehouse.
+Analytics dashboards are built using **R Shiny**, running on the same EC2 instance as the Data Warehouse, and accessed via **AWS Systems Manager Session Manager**.
 
-The workshop emphasises:
+The platform is engineered with:
 
-- **Separation of OLTP and Analytics** workloads.  
-- A fully **private analytics backend** (ETL Lambda, Data Warehouse, Shiny) with no public IPs.  
-- **Cost‑efficient private access to S3** using a Gateway VPC Endpoint instead of a NAT Gateway.
+- Clear separation between **OLTP vs Analytics** workloads  
+- Private-only analytical backend (**no public DW access**)  
+- Cost-efficient, scalable AWS serverless components  
+- Zero-SSH admin access via **SSM Session Manager** into the private DW / Shiny EC2 
+- You can run the Shiny app locally at **localhost:3838**
 
-#### Prerequisites
+#### Key Architecture Components
 
-Before starting the detailed sections (5.1–5.6), the reader is expected to have:
+**Frontend & OLTP Domain**
 
-- Basic familiarity with **AWS services** such as EC2, S3, Lambda, API Gateway, VPC, and IAM.  
-- Working knowledge of **SQL** and **PostgreSQL**.  
-- A general understanding of **web applications** (HTTP, JSON, REST APIs).  
-- An AWS account with sufficient permissions to create VPC endpoints, Lambda functions, EC2 instances, S3 buckets, and EventBridge rules.
+- Next.js app: **`ClickSteam.NextJS`** hosted on **AWS Amplify Hosting**  
+- **Amazon CloudFront** as global CDN  
+- **Amazon Cognito** User Pool for authentication  
+- OLTP PostgreSQL on EC2: **`SBW_EC2_WebDB`** (public subnet)  
+  - DB: `clickstream_web` (schema `public`)  
+  - Port: `5432`  
 
-> This workshop assumes that the core infrastructure (VPC, subnets, EC2 instances, Lambda functions, API Gateway, and S3 buckets) is already provisioned, for example via Infrastructure‑as‑Code such as Terraform or CloudFormation.
+**Ingestion & Data Lake Domain**
+
+- **Amazon API Gateway (HTTP API)**: `clickstream-http-api`  
+  - Route: `POST /clickstream`  
+- **Lambda Ingest**: `clickstream-lambda-ingest`  
+  - Validates payload, enriches metadata, writes JSON files to S3  
+- **S3 Raw Clickstream Bucket**: `clickstream-s3-ingest`  
+  - Prefix: `events/YYYY/MM/DD/`  
+  - File pattern: `event-<uuid>.json`  
+  - `RAW_BUCKET = clickstream-s3-ingest`  
+
+**Analytics & Data Warehouse Domain**
+
+- **Private EC2 for DWH + Shiny**: `SBW_EC2_ShinyDWH` (private subnet `10.0.128.0/20`)  
+  - DWH DB: `clickstream_dw` 
+  - Main table: `clickstream_events` with fields:
+    - `event_id, event_timestamp, event_name`  
+    - `user_id, user_login_state, identity_source, client_id, session_id, is_first_visit`  
+    - `context_product_id, context_product_name, context_product_category, context_product_brand`  
+    - `context_product_price, context_product_discount_price, context_product_url_path`  
+  - R Shiny Server on port `3838`, web path `/sbw_dashboard`  
+
+- **Lambda ETL**: `SBW_Lamda_ETL` (VPC-enabled)  
+  - Reads raw JSON from `clickstream-s3-ingest`  
+  - Transforms into SQL-ready rows  
+  - Inserts into `clickstream_dw.public.clickstream_events`  
+
+- **EventBridge Rule**: `SBW_ETL_HOURLY_RULE`  
+  - Schedule: `rate(1 hour)`  
+
+- **VPC & Networking**
+
+  - VPC CIDR: `10.0.0.0/16`  
+  - Public subnet: `10.0.0.0/20` → `SBW_Project-subnet-public1-ap-southeast-1a` (OLTP EC2)  
+  - Private subnet: `10.0.128.0/20` → `SBW_Project-subnet-private1-ap-southeast-1a` (DW, Shiny, ETL Lambda)  
+  - **S3 Gateway VPC Endpoint** for private S3 access  
+  - **SSM Interface Endpoints** (SSM, SSMMessages, EC2Messages) for Session Manager  
+
+- **Admin Access (SSM)**  
+  - Port forwarding:
+    - `localPort = 3838`  
+    - `portNumber = 3838`  
+  - Shiny URL from local: `http://localhost:3838/sbw_dashboard`  
 
 #### Content Map
 
-The workshop content is split into six sections:
-
-1. [Objectives & Scope](5.1-Objectives-&-Scope)
-2. [Architecture Walkthrough](5.2-Architecture-Walkthrough) 
-3. [Implementing Clickstream Ingestion](5.3-Implementing-Clickstream-Ingestion) 
-4. [Building the Private Analytics Layer](5.4-Building-the-Private-Analytics-Layer)  
-5. [Visualizing Analytics with Shiny Dashboards](5.5-Visualizing-Analytics-with-Shiny-Dashboards)
-6. [Summary & Clean up](5.6-Summary-&-Clean-up)
+1. **[5.1. Objectives & Scope](5.1-objectives--scope/)**  
+2. **[5.2. Architecture Walkthrough](5.2-architecture-walkthrough/)**  
+3. **[5.3. Implementing Clickstream Ingestion](5.3-implementing-clickstream-ingestion/)**  
+4. **[5.4. Building the Private Analytics Layer](5.4-building-private-analytics-layer/)**  
+5. **[5.5. Visualizing Analytics with Shiny Dashboards](5.5-visualizing-analytics-with-shiny-dashboards/)**  
+6. **[5.6. Summary & Clean up](5.6-summary-cleanup/)**

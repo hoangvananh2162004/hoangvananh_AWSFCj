@@ -1,127 +1,105 @@
 ---
 title: "Objectives & Scope"
-weight: 1
+weight: 51
 chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-This section defines the **purpose**, **learning objectives**, and **scope** of the workshop that is built around a Batch-based Clickstream Analytics Platform for an e-commerce website selling computer products.
-
-The platform is implemented on AWS and uses:
-
-- Next.js on **AWS Amplify Hosting** (front-end, Server-Side Rendering).  
-- **Amazon CloudFront** (global content delivery).  
-- **Amazon Cognito** (user authentication).  
-- **Amazon API Gateway** and **AWS Lambda** (clickstream ingestion and ETL).  
-- **Amazon S3** (raw clickstream data storage).  
-- **Amazon VPC** with public and private subnets (network isolation).  
-- **PostgreSQL** on **Amazon EC2** (OLTP and Data Warehouse).  
-- **R Shiny Server** (analytics dashboards).
-
----
-
 ### Business Context
 
-The target system is an e-commerce website that sells computer-related products (laptops, monitors, accessories, etc.).  
+The target system is an e-commerce website selling laptops, monitors, and accessories.  
+The business wants to:
 
-The business would like to:
+- Understand **how users interact** with the website:
+  - Which pages they visit
+  - Which products they view
+  - Add-to-cart and checkout events
+- Measure the **conversion funnel** from product view → add to cart → checkout
+- Identify:
+  - Top products (best-selling / most viewed)
+  - Peak activity windows (by hour, by day)
+- Use these insights to design the most effective marketing strategies to:
+  - Increase revenue
+  - Optimize and reduce costs
 
-- Understand **how users interact with the website** (pages visited, products viewed, add-to-cart events, checkout attempts).  
-- Measure **conversion funnels** (from product view to purchase).  
-- Identify **top-performing products** and periods of high activity.  
-- Do this **without impacting** the operational database and **without exposing** internal analytics components to the public Internet.
+To achieve this, the platform:
 
-The platform therefore separates **online transaction processing (OLTP)** from **analytics**, and gathers clickstream data in a dedicated analytics environment.
+- Collects a dataset of user behavior via clickstream events, then produces statistics and analytics.
 
 ---
 
 ### Learning Objectives
 
-After completing all sections (5.1–5.6), the reader should be able to:
+#### Understand the Architecture
 
-#### Architectural understanding
+- Be able to explain the overall architecture of a **batch-based clickstream analytics platform** using:
+  - Amplify, CloudFront, Cognito, EC2 OLTP in the **user-facing domain**
+  - API Gateway, Lambda Ingest, S3 Raw bucket in the **ingestion & data lake domain**
+  - ETL Lambda, PostgreSQL DW on EC2, R Shiny in the **analytics & DW domain**
+- Be able to explain why OLTP and Analytics are separated:
+  - **Logical**: different schemas, different types of workloads
+  - **Physical**: public subnet vs private subnet, two different EC2 instances
 
-- Describe the overall architecture of a **batch-based clickstream analytics platform** on AWS.  
-- Explain the differences between:
-  - The **user-facing domain** (Amplify, CloudFront, Cognito, OLTP EC2).  
-  - The **ingestion & data lake domain** (API Gateway, Lambda Ingest, S3 Raw bucket).  
-  - The **analytics & data warehouse domain** (ETL Lambda, PostgreSQL DW, Shiny).  
-- Justify why OLTP and Analytics are **logically and physically separated**, and how this reduces risk for the operational workload.
+#### Hands-on Skills
 
-#### Practical skills
+- Send clickstream events from the frontend to API Gateway → Lambda Ingest → S3 Raw (`clickstream-s3-ingest`).
+- Configure a **Gateway VPC Endpoint for S3** and adjust the private route table so private components can access S3.
+- Configure and test an **ETL Lambda** (`SBW_Lamda_ETL`) that can:
+  - Read raw JSON files from `s3://clickstream-s3-ingest/events/YYYY/MM/DD/`
+  - Transform events into rows for the table `clickstream_dw.public.clickstream_events`
+- Connect to the DW (`SBW_EC2_ShinyDWH`) and run sample SQL queries:
+  - Count the number of events
+  - Top products
+  - Basic funnel
+- Access **R Shiny dashboards** via SSM port forwarding and interpret:
+  - Funnel charts
+  - Product engagement charts
+  - Time-series charts of activity over time
 
-- Trigger and inspect clickstream ingestion from the frontend to **API Gateway → Lambda Ingest → S3**.  
-- Configure a **Gateway VPC Endpoint for S3** and update route tables so that analytics components inside private subnets can reach S3 **without using a NAT Gateway**.  
-- Configure and test a **VPC-enabled ETL Lambda** that:
-  - Reads raw JSON files from the S3 Raw Clickstream bucket.  
-  - Transforms events into SQL-ready analytical tables.  
-  - Loads data into a PostgreSQL Data Warehouse hosted on EC2 in a private subnet.  
-- Connect to the Data Warehouse and run sample **SQL queries** to validate the pipeline (event counts, top products, etc.).  
-- Access **R Shiny dashboards** running on the same EC2 instance as the Data Warehouse, and interpret the main charts (funnels, top products, time series).
+#### Security & Cost Awareness
 
-#### Security and cost-awareness
-
-- Explain how **Gateway VPC Endpoints** keep S3 traffic on the **AWS private network**.  
-- Compare using a Gateway VPC Endpoint versus a **NAT Gateway** in terms of **security**, **cost**, and **operational complexity**.  
-- List the main security controls used in the architecture:
-  - Public vs. private subnets.  
-  - Security groups between OLTP, ETL Lambda, and Data Warehouse.  
-  - Limited IAM permissions for Lambda Ingest and ETL Lambda.
-
----
-
-### Scope of the Workshop
-
-The workshop focuses on **three core capabilities** of the platform:
-
-1. **Implementing clickstream ingestion**  
-   - Capturing user interactions in the browser.  
-   - Sending events as JSON to API Gateway.  
-   - Persisting raw events as time-partitioned files in an S3 Raw Clickstream bucket.
-
-2. **Building the private analytics layer**  
-   - Configuring the VPC, private subnets, and S3 Gateway VPC Endpoint.  
-   - Running ETL Lambda inside the VPC so that it can:
-     - Read from S3 using private connectivity.  
-     - Write data into the PostgreSQL Data Warehouse on a private EC2 instance.
-
-3. **Visualizing analytics with Shiny dashboards**  
-   - Querying analytical tables from R Shiny Server running on the same EC2 instance as the Data Warehouse.  
-   - Providing interactive dashboards for funnel analysis, product performance, and time-based trends.
-
-The workshop assumes that:
-
-- The base infrastructure (VPC, subnets, EC2 instances, IAM roles, basic Lambda skeletons, and S3 buckets) has already been provisioned, for example via **Terraform** or **CloudFormation**.  
-- The focus is on **understanding and validating** the data flow and private connectivity, rather than on writing production-grade ETL code or frontend code from scratch.
+- Understand the importance of protecting user behavior data by placing `EC2_ShinyDWH` and `Lambda_ETL` in **private subnets**:
+  - Only allow `Lambda_ETL` to access S3 through a **Gateway VPC Endpoint**
+  - Only allow admins to access `EC2_ShinyDWH` through SSM using **Interface VPC Endpoints**
+- Recognize the main security controls:
+  - Separation of public and private subnets
+  - Security groups between `sg_oltp_webDB`, `sg_Lambda_ETL`, `sg_analytics_ShinyDWH`
+  - Least-privilege IAM permissions for each Lambda
+  - Zero-SSH administration using AWS Systems Manager Session Manager (no bastion host, no open SSH port).
 
 ---
 
-### Out-of-Scope Topics
+### Workshop Scope
 
-To keep the content focused and achievable within a limited time, the workshop **does not** cover:
+The workshop focuses on three main capability areas:
 
-- Real-time streaming pipelines (for example, Amazon Kinesis, Kafka, or managed streaming services).  
-- Advanced data warehousing technologies such as **Amazon Redshift**, **Redshift Serverless**, or **Lakehouse** architectures.  
-- Complex machine learning or user segmentation models built on top of the clickstream data.  
-- Production-grade CI/CD pipelines, blue/green deployments, or multi-account AWS setups.  
-- Deep optimization of SQL queries and index design beyond simple examples.
+1. **Implementing the clickstream ingestion layer**
 
-These topics are considered **future extensions** of the platform and may be explored in subsequent work.
+   - Capture browser interactions in the Next.js frontend
+   - Send JSON events to API Gateway (`clickstream-http-api`)
+   - Store raw events over time in `clickstream-s3-ingest`
+
+2. **Building the private analytics layer**
+
+   - Create the VPC, subnets, route tables, and VPC endpoints
+   - Run `SBW_Lamda_ETL` inside the VPC
+   - Connect the ETL Lambda to the private EC2 Data Warehouse (`SBW_EC2_ShinyDWH`)
+
+3. **Visualizing analytics with Shiny dashboards**
+   - Query `clickstream_dw` from R Shiny
+   - Display funnels, product performance, and time trends
+   - Access Shiny through **SSM Session Manager port forwarding**
 
 ---
 
-### Target Audience
+### Out of Scope
 
-The workshop is primarily intended for:
+To keep the workshop focused and manageable, we **do not** go deep into:
 
-- Students or engineers with a basic understanding of AWS who want to see how multiple services fit together into a real analytics solution.  
-- Developers who are comfortable with **JavaScript/TypeScript**, **SQL**, and **Linux-based environments**.  
-- Anyone interested in learning how to design a **secure, cost-conscious analytics architecture** using mostly serverless components and a small EC2 footprint.
+- Real-time streaming (Kinesis, Kafka, MSK, …)
+- Advanced DW services (Amazon Redshift / Redshift Serverless)
+- Recommendation, segmentation, or anomaly detection using ML
+- Production-grade CI/CD, blue/green deployments, multi-account setups
+- Advanced SQL tuning or detailed index design
 
-Readers are not expected to be experts in networking or data engineering; the workshop provides concrete, guided steps in later sections (5.2–5.5) to make the architecture tangible and reproducible.
-
-**Figure 5-1: Amplify hosting for the e-commerce frontend**
-
-The screenshot shows the Amplify application that hosts the Next.js e-commerce frontend, including the main branch, last deployment status, and the CloudFront URL used in this workshop.
-
-![Figure 5-1: Amplify hosting for the e-commerce frontend](/images/5-a-amplify-overview.png)
+These are natural follow-up directions once the batch-based clickstream foundation in this workshop is in place.

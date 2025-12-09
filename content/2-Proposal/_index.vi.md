@@ -358,4 +358,4 @@ Với các kết quả phân tích này, doanh nghiệp có thể:
 
 Kết quả là, marketing and sales strategies trở nên dựa trên bằng chứng và chính xác hơn, hỗ trợ ra quyết định tốt hơn và cải thiện hiệu suất kinh doanh.
 
-### [Proposal Template](/images/2-Proposal/Proposal_File.docx)
+### File TEMPLETE DOCX: [Tải Proposal Template (docx)](/images/2-Proposal/Proposal_File.docx)

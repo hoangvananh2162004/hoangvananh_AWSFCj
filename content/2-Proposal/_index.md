@@ -358,4 +358,4 @@ With these analytical results, businesses can:
 
 As a result, marketing and sales strategies become more evidence-based and precise, supporting better decision-making and improved business performance.
 
-### [Proposal Template](/images/2-Proposal/Proposal_File.docx)
+### File TEMPLETE DOCX: [Down Proposal Template (docx)](/images/2-Proposal/Proposal_File.docx)

@@ -90,3 +90,4 @@ pre: " <b> 4.3. </b> "
 ![anh](/images/su6.jpg)
 ![anh](/images/su7.jpg)
 ![anh](/images/su8.jpg)
+![anh](/images/fba8dbb5f6de798020cf2.jpg)

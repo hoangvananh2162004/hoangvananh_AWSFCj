@@ -12,11 +12,11 @@ pre: " <b> 1.6. </b> "
 
 ### Tasks to be carried out this week:
 
-| Day | Task                                                  | Start Date | Completion Date | Reference Material                                                                             |
-| --- | ----------------------------------------------------- | ---------- | --------------- | ---------------------------------------------------------------------------------------------- |
+| Day | Task                                                  | Start Date | Completion Date | Reference Material                                                                            |
+| --- | ----------------------------------------------------- | ---------- | --------------- | --------------------------------------------------------------------------------------------- |
 | 1   | - Amazon Cognito - AWS Organization                   | 05/10/2025 | 05/10/2025      |
-| 2   | - AWS Identity Center - Amazon Key Management Service | 05/10/2025 | 05/10/2025      | <<https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
-| 3   | - AWS Security Hub                                    | 06/10/2025 | 06/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3>  |
+| 2   | - AWS Identity Center - Amazon Key Management Service | 05/10/2025 | 05/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
+| 3   | - AWS Security Hub                                    | 06/10/2025 | 06/10/2025      | <https://www.youtube.com/watch?v=mXRqgMr_97U&list=PLahN4TLWtox2a3vElknwzU_urND8hLn1i&index=3> |
 
 ### Week 6 Achievements:
 

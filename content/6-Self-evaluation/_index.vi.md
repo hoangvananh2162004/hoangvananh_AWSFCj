@@ -5,7 +5,8 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-Trong thời gian thực tập tại **AWS First Cloud Journey** từ **08/09/2025** đến **09/12/2025**, tôi đã có cơ hội tiếp xúc với môi trường làm việc thực tế và áp dụng những gì đã học vào công việc hằng ngày.  
+Trong thời gian thực tập tại **AWS First Cloud Journey** từ **08/09/2025** đến **09/12/2025**, tôi đã có cơ hội tiếp xúc với môi trường làm việc thực tế và áp dụng những gì đã học vào công việc hằng ngày.
+
 Tôi có cơ hôi được tham gia môi trường năng động, cùng với nhóm của mình đã học tập và thực hiện dự án nhóm với nhau. Có cơ hội được học và tiếp cận đến AWS được học và tìm hiểu các dịch vụ nền tảng cloud, được thực hành và làm việc với cloud hiểu rõ tàm quan trong của các dịch vụ, qua đó giúp tôi hiểu rõ hơn quy trình làm việc và cải thiện các kỹ năng như: Phân tích, lập trình, viết báo cáo, sử dụng được các dịch vụ cloud cơ bản.
 
 Trong suốt quá trình thực tập, tôi cố gắng hoàn thành tốt nhiệm vụ được giao, giữ thái độ nghiêm túc và chủ động trao đổi với anh/chị trong team để làm việc hiệu quả hơn.

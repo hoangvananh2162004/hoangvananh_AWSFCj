@@ -5,10 +5,11 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
-During my internship at **AWS First Cloud Journey** from **08/09/2025** to **09/12/2025**, I had the opportunity to experience a real working environment and apply the knowledge I learned in school to everyday tasks.  
-I participated in **[brief description of the main project or tasks]**, which helped me understand the workflow more clearly and improve various skills such as **[list of skills: programming, analysis, communication, reporting…]**.
+During my internship at **AWS First Cloud Journey** from **08/09/2025** to **09/12/2025**, I had the opportunity to experience a real working environment and apply the knowledge I learned in school to everyday tasks.
 
-Throughout the internship, I always aimed to complete assigned tasks responsibly, maintain a professional attitude, and actively communicate with team members to work more effectively.
+I had the opportunity to work in a dynamic environment, where my team and I studied and carried out a group project together. I also had the chance to learn and access AWS, explore various cloud platform services, practice and work directly with the cloud, and understand the importance of these services. Through this experience, I gained a deeper understanding of workflow processes and improved my skills in areas such as analysis, programming, reporting, and using basic cloud services.
+
+Throughout the internship, I always tried to complete the assigned tasks well, maintained a professional attitude, and proactively communicated with team members to work more effectively.
 
 Below is my self-assessment:
 
